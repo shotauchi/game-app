@@ -1,7 +1,10 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-
+use App\Http\Controllers\Admin\GameController;
+use App\Http\Controllers\Admin\ConsoleController;
+use App\Http\Controllers\Admin\PerformanceController;
+use App\Http\Controllers\Admin\SearchController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -16,3 +19,10 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
+
+Route::controller(GameController::class)->prefix('admin')->group(function() {
+     Route::get('game/create','add');
+});
+
+
+
