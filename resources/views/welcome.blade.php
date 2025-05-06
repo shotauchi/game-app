@@ -98,7 +98,7 @@
                 </div>
             </div>
         </div>
-<!-- フッター -->
+        <!-- フッター -->
         <footer class="bg-light mt-auto py-4 px-3 d-flex justify-content-end">
         <div class="rounded-circle bg-warning d-flex justify-content-center align-items-center" style="width: 70px; height: 70px;">
             戻る

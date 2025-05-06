@@ -17,7 +17,7 @@ use App\Http\Controllers\Admin\SearchController;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('home');
 });
 
 Route::controller(GameController::class)->prefix('admin')->group(function() {
