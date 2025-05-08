@@ -1,10 +1,10 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\Admin\GameController;
-use App\Http\Controllers\Admin\ConsoleController;
-use App\Http\Controllers\Admin\PerformanceController;
-use App\Http\Controllers\Admin\SearchController;
+use App\Http\Controllers\GameController;
+use App\Http\Controllers\ConsoleController;
+use App\Http\Controllers\PerformanceController;
+use App\Http\Controllers\SearchController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -20,13 +20,15 @@ Route::get('/', function () {
     return view('home');
 });
 
-Route::controller(GameController::class)->prefix('admin')->group(function() {
-     Route::get('game/create','add');
-});
+Route::get('/games', [GameController::class, 'index'])->name('games.index');
+
+// Route::controller(GameController::class)->prefix('admin')->group(function() {
+//      Route::get('game/create','add');
+// });
 
 
 
 
 Auth::routes();
 
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+//Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
