@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
+use App\Models\Search;
+
 class SearchController extends Controller
 {
     /**
@@ -13,7 +15,8 @@ class SearchController extends Controller
      */
     public function index()
     {
-        //
+        $searchs = Search::all();
+        return view('searchs.index', compact('searchs'));
     }
 
     /**
