@@ -20,7 +20,17 @@ Route::get('/', function () {
     return view('home');
 });
 
+Route::get('/admin/login', function () {
+    return view('admin.login');
+});
+
 Route::get('/games', [GameController::class, 'index'])->name('games.index');
+
+Route::get('/consoles', [ConsoleController::class, 'index'])->name('consoles.index');
+
+Route::get('/performances', [PerformanceController::class, 'index'])->name('parformances.index');
+
+Route::get('/searchs', [SearchController::class, 'index'])->name('searchs.index');
 
 // Route::controller(GameController::class)->prefix('admin')->group(function() {
 //      Route::get('game/create','add');
