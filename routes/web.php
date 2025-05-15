@@ -5,6 +5,8 @@ use App\Http\Controllers\GameController;
 use App\Http\Controllers\ConsoleController;
 use App\Http\Controllers\PerformanceController;
 use App\Http\Controllers\SearchController;
+use Illuminate\Http\Request;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -22,6 +24,26 @@ Route::get('/', function () {
 
 Route::get('/admin/login', function () {
     return view('admin.login');
+});
+
+Route::post('/admin/login', function (Request $request) {
+    if ($request->password === env('ADMIN_PASSWORD')) {
+        session(['is_admin' => true]);
+        return redirect('/admin');
+    }
+    return back()->withErrors(['password' => 'パスワードが違います']);
+});
+
+Route::middleware(['admin'])->group(function () {
+    Route::post('/admin/logout', function (Request $request) {
+        $request->session()->forget('is_admin');
+
+        return redirect('/admin/login')->with('status', 'ログアウトしました');
+    })->name('admin.logout');
+    
+    Route::get('/admin', function () {
+        return view('admin.home');
+    });
 });
 
 Route::get('/games', [GameController::class, 'index'])->name('games.index');
