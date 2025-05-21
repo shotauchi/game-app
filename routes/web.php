@@ -46,6 +46,12 @@ Route::middleware(['admin'])->group(function () {
     });
 });
 
+Route::get('/games/create', function () {
+    return view('games.new');
+})->name('admin.games.create');
+
+
+
 Route::get('/games', [GameController::class, 'index'])->name('games.index');
 
 Route::get('/consoles', [ConsoleController::class, 'index'])->name('consoles.index');
