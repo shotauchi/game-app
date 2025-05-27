@@ -50,6 +50,9 @@ Route::get('/games/create', function () {
     return view('games.new');
 })->name('admin.games.create');
 
+Route::get('/consoles/create', function () {
+    return view('consoles.new');
+})->name('admin.consoles.create');
 
 
 Route::get('/games', [GameController::class, 'index'])->name('games.index');
