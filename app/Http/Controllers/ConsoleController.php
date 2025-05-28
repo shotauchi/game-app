@@ -19,6 +19,8 @@ class ConsoleController extends Controller
         return view('consoles.index', compact('consoles'));
     }
 
+   
+
     /**
      * Show the form for creating a new resource.
      *
@@ -37,7 +39,12 @@ class ConsoleController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        //Console::create('/consoles/create');
+        $console = new Console;
+        $form = $request->all();
+        $console->fill($form);
+        $console->save();
+        return redirect()->route('admin.consoles.create')->with('success', 'Console created successfully!');
     }
 
     /**

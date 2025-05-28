@@ -9,7 +9,7 @@
         <div class="alert alert-success">{{ session('success') }}</div>
     @endif
     
-    <form action="" method="POST">
+    <form action="{{ route('consoles.store') }}" method="POST">
         @csrf
 
         <div class="mb-3">
@@ -21,9 +21,9 @@
         </div>
 
         <div class="mb-3">
-            <label for="manifacture" class="form-label">Manifacture</label>
-            <input type="text" name="manifacture" id="manifacture" class="form-control @error('manifacture') is-invalid @enderror" value="{{ old('manifacture') }}">
-            @error('manifacture')
+            <label for="Manufacturer" class="form-label">Manifacture</label>
+            <input type="text" name="Manufacturer" id="Manufacturer" class="form-control @error('Manufacturer') is-invalid @enderror" value="{{ old('Manufacturer') }}">
+            @error('Manufacturer')
                 <div class="invalid-feedback">{{ $message }}</div>
             @enderror
         </div>

@@ -54,6 +54,7 @@ Route::get('/consoles/create', function () {
     return view('consoles.new');
 })->name('admin.consoles.create');
 
+Route::post('/consoles/create', [ConsoleController::class, 'store'])->name('consoles.store');
 
 Route::get('/games', [GameController::class, 'index'])->name('games.index');
 
