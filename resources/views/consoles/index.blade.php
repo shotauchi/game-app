@@ -8,7 +8,7 @@
         
         <ul>
     @forelse ($consoles as $console)
-        <li>{{ $console->title }}</li>
+        <li>{{ $console->use }}</li>
     @empty
         <li>コンソールがありません。</li>
     @endforelse
