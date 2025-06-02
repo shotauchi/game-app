@@ -34,7 +34,8 @@ Route::post('/admin/login', function (Request $request) {
     return back()->withErrors(['password' => 'パスワードが違います']);
 });
 
-Route::middleware(['admin'])->group(function () {
+//ログインした状態で実行するリクエスト。
+Route::middleware(['admin'])->group(function () { 
     Route::post('/admin/logout', function (Request $request) {
         $request->session()->forget('is_admin');
 
@@ -44,17 +45,18 @@ Route::middleware(['admin'])->group(function () {
     Route::get('/admin', function () {
         return view('admin.home');
     });
+    Route::get('/consoles/create', function () {
+        return view('consoles.new');
+    })->name('admin.consoles.create');
+    
+    Route::post('/consoles/create', [ConsoleController::class, 'store'])->name('consoles.store');
 });
 
 Route::get('/games/create', function () {
     return view('games.new');
 })->name('admin.games.create');
 
-Route::get('/consoles/create', function () {
-    return view('consoles.new');
-})->name('admin.consoles.create');
 
-Route::post('/consoles/create', [ConsoleController::class, 'store'])->name('consoles.store');
 
 Route::get('/games', [GameController::class, 'index'])->name('games.index');
 
