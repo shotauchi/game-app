@@ -49,6 +49,10 @@ Route::middleware(['admin'])->group(function () {
         return view('consoles.new');
     })->name('admin.consoles.create');
     
+    Route::get('/performances/create', function () {
+        return view('performances.new');
+    })->name('admin.performances.create');
+    
     Route::post('/consoles/create', [ConsoleController::class, 'store'])->name('consoles.store');
 });
 
