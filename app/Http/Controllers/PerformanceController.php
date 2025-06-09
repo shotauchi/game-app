@@ -6,6 +6,8 @@ use Illuminate\Http\Request;
 
 use App\Models\Performance;
 
+use App\Models\Console;
+
 class PerformanceController extends Controller
 {
     /**
@@ -26,7 +28,8 @@ class PerformanceController extends Controller
      */
     public function create()
     {
-        //
+        $consoles = Console::all();
+    return view('performances.new', compact('consoles'));
     }
 
     /**

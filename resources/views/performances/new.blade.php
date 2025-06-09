@@ -12,23 +12,21 @@
     <form  method="POST">
         @csrf
 
-        <div class="mb-3">
-      <div class="form-check">
-        <input class="form-check-input single-checkbox" type="checkbox" id="console1">
-        <label class="form-check-label" for="console1">コンソール1</label>
-      </div>
-      <div class="form-check">
-        <input class="form-check-input single-checkbox" type="checkbox" id="console2">
-        <label class="form-check-label" for="console2">コンソール2</label>
-      </div>
-      <div class="form-check">
-        <input class="form-check-input single-checkbox" type="checkbox" id="console3">
-       <label class="form-check-label" for="console3">コンソール3</label>
-      </div>
-            @error('introduction')
-                <div class="invalid-feedback">{{ $message }}</div>
-            @enderror
-        </div>
+        @foreach($consoles as $console)
+          <div class="form-check">
+            <input class="form-check-input single-checkbox"
+                   type="radio"
+                   name="console_id"
+                   id="console{{ $console->id }}"
+                   value="{{ $console->id }}">
+            <label class="form-check-label" for="console{{ $console->id }}">
+              {{ $console->use }} 
+            </label>
+          </div>
+        @endforeach
+        @error('console_id')
+            <div class="text-danger">{{ $message }}</div>
+        @enderror
 
         <div class="mb-3">
             <label for="Manufacturer" class="form-label">GPU</label>
