@@ -3,7 +3,7 @@
 @section('content')
 <!-- サイト名 -->
 <div class="container mt-5">
-    <h2>Create New Console</h2>
+    <h2>パフォーマンスの新規作成</h2>
 
     @if(session('success'))
         <div class="alert alert-success">{{ session('success') }}</div>
@@ -29,17 +29,17 @@
         @enderror
 
         <div class="mb-3">
-            <label for="Manufacturer" class="form-label">GPU</label>
-            <input type="text" name="Manufacturer" id="Manufacturer" class="form-control @error('Manufacturer') is-invalid @enderror" value="{{ old('Manufacturer') }}">
-            @error('Manufacturer')
+            <label for="GPU" class="form-label">GPU</label>
+            <input type="text" name="GPU" id="GPU" class="form-control @error('GPU') is-invalid @enderror" value="{{ old('GPU') }}">
+            @error('GPU')
                 <div class="invalid-feedback">{{ $message }}</div>
             @enderror
         </div>
 
         <div class="mb-3">
-            <label for="use" class="form-label">CPU</label>
-            <input type="text" name="use" id="use" class="form-control @error('use') is-invalid @enderror" value="{{ old('use') }}">
-            @error('use')
+            <label for="CPU" class="form-label">CPU</label>
+            <input type="text" name="CPU" id="CPU" class="form-control @error('CPU') is-invalid @enderror" value="{{ old('CPU') }}">
+            @error('CPU')
                 <div class="invalid-feedback">{{ $message }}</div>
             @enderror
         </div>

@@ -29,7 +29,7 @@ class PerformanceController extends Controller
     public function create()
     {
         $consoles = Console::all();
-    return view('performances.new', compact('consoles'));
+        return view('performances.new', compact('consoles'));
     }
 
     /**
@@ -40,7 +40,12 @@ class PerformanceController extends Controller
      */
     public function store(Request $request)
     {
-        
+        //dd($request->all());
+        $performance = new Performance;
+        $form = $request->all();
+        $performance->fill($form);
+        $performance->save();
+        return redirect()->route('admin.performances.create')->with('success', 'Performance created successfully!');
     }
 
     /**

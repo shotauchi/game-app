@@ -56,6 +56,7 @@ Route::middleware(['admin'])->group(function () {
     // })->name('admin.performances.create');
     Route::get('/performances/create', [PerformanceController::class, 'create'])->name('admin.performances.create');
     
+    Route::post('/performances/create', [PerformanceController::class, 'store'])->name('performances.store');
 });
 
 Route::get('/games/create', function () {
