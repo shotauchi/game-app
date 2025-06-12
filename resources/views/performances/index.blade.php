@@ -8,7 +8,8 @@
         
         <ul>
     @forelse ($performances as $performance)
-        <li>{{ $performance->title }}</li>
+        <li>{{ $performance->CPU }}</li>
+        <li>{{ $performance->GPU }}</li>
     @empty
         <li>パフォーマンスがありません。</li>
     @endforelse
