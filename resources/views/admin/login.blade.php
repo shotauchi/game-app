@@ -1,6 +1,16 @@
 @extends('layouts.app')
 
 @section('content')
+
+<style>
+        
+        body {
+        background-color: #f0f8ff; /* 背景色：薄い青 */
+        color: #28a745;           /* 文字色：濃いグレー */
+    }
+    
+</style>
+
 <div class="container" style="max-width: 400px;">
         <div class="card shadow">
             <div class="card-body">
