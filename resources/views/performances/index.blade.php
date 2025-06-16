@@ -5,15 +5,29 @@
         <div class="text-center my-4">
             <h1>パフォーマンス一覧画面です</h1>
         </div>
-        
-        <ul>
+        <table class="table">
+  <thead>
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">CPU</th>
+      <th scope="col">GPU</th>
+    </tr>
+  </thead>
+  <tbody>
     @forelse ($performances as $performance)
-        <li>{{ $performance->CPU }}</li>
-        <li>{{ $performance->GPU }}</li>
+    <tr>
+      <th scope="row">1</th>
+      <td>{{ $performance->CPU }}</td>
+      <td>{{ $performance->GPU }}</td>
+    </tr>
     @empty
-        <li>パフォーマンスがありません。</li>
+    <tr>
+      <th scope="row">1</th>
+      <td>パフォーマンスがありません。</td>
+      <td>パフォーマンスがありません。</td>
+    </tr>
     @endforelse
-</ul>
-        
-        
+  </tbody>
+</table>
+
 @endsection
