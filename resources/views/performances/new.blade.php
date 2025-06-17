@@ -2,8 +2,17 @@
 
 @section('content')
 <!-- サイト名 -->
+<style>
+        
+        body {
+        background-color: #f0f8ff; /* 背景色：薄い青 */
+        color: #28a745;           /* 文字色：濃いグレー */
+    }
+    
+</style>
+
 <div class="container mt-5">
-    <h2>パフォーマンスの新規作成</h2>
+    <h2 style="color: #006400;">パフォーマンスの新規作成</h2> <!-- 濃い緑 -->
 
     @if(session('success'))
         <div class="alert alert-success">{{ session('success') }}</div>
@@ -29,7 +38,7 @@
         @enderror
 
         <div class="mb-3">
-            <label for="GPU" class="form-label">GPU</label>
+            <label for="GPU" class="form-label" style="color: #ff8c00;">GPU</label> <!-- 濃いオレンジ -->
             <input type="text" name="GPU" id="GPU" class="form-control @error('GPU') is-invalid @enderror" value="{{ old('GPU') }}">
             @error('GPU')
                 <div class="invalid-feedback">{{ $message }}</div>
@@ -37,7 +46,7 @@
         </div>
 
         <div class="mb-3">
-            <label for="CPU" class="form-label">CPU</label>
+            <label for="CPU" class="form-label" style="color: #b8860b;">CPU</label> <!-- 濃い黄色 -->
             <input type="text" name="CPU" id="CPU" class="form-control @error('CPU') is-invalid @enderror" value="{{ old('CPU') }}">
             @error('CPU')
                 <div class="invalid-feedback">{{ $message }}</div>

@@ -16,13 +16,13 @@
   <tbody>
     @forelse ($performances as $performance)
     <tr>
-      <th scope="row">1</th>
+      <th scope="row">{{ $loop->iteration }}</th>
       <td>{{ $performance->CPU }}</td>
       <td>{{ $performance->GPU }}</td>
     </tr>
     @empty
     <tr>
-      <th scope="row">1</th>
+      <th scope="row">-</th>
       <td>パフォーマンスがありません。</td>
       <td>パフォーマンスがありません。</td>
     </tr>

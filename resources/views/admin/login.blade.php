@@ -5,7 +5,7 @@
 <style>
         
         body {
-        background-color: #f0f8ff; /* 背景色：薄い青 */
+        background-color: #28a745; /* 背景色：薄い青 */
         color: #28a745;           /* 文字色：濃いグレー */
     }
     

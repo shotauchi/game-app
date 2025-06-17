@@ -2,6 +2,15 @@
 
 @section('content')
 <!-- サイト名 -->
+<style>
+        
+        body {
+        background-color: #f0f8ff; /* 背景色：薄い青 */
+        color: #28a745;           /* 文字色：濃いグレー */
+    }
+    
+</style>
+
         <div class="text-center my-4">
             <h1>コンソール一覧画面です</h1>
         </div>
@@ -24,7 +33,7 @@
     </tr>
     @empty
     <tr>
-      <th scope="row">-</th>
+      <th scope="row">-</th>                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            
       <td>コンソールがありません。</td>
       <td>コンソールがありません。</td>
     </tr>
