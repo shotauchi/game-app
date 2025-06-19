@@ -64,12 +64,11 @@ Route::get('/games/create', function () {
 })->name('admin.games.create');
 
 
-
 Route::get('/games', [GameController::class, 'index'])->name('games.index');
 
 Route::get('/consoles', [ConsoleController::class, 'index'])->name('consoles.index');
 
-Route::get('/performances', [PerformanceController::class, 'index'])->name('parformances.index');
+Route::get('/performances', [PerformanceController::class, 'index'])->name('performances.index');
 
 Route::get('/searchs', [SearchController::class, 'index'])->name('searchs.index');
 

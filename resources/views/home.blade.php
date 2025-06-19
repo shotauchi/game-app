@@ -54,9 +54,16 @@
                         <div class="card-body">
                           <h5 class="card-title text-center">サイト案内</h5>
                           <ul class="list-group list-group-numbered list-group-flush">
-                            <li class="list-group-item bg-primary text-white">ゲーム一覧ページ</li>
-                            <li class="list-group-item bg-success text-white">コンソール一覧ページ</li>
-                            <li class="list-group-item bg-secondary text-white">パフォーマンス一覧ページ</li>
+            <!--<div class="container mt-4">-->
+                            <li class="list-group-item bg-primary text-white">
+                                <a href="{{ route('games.index') }}" class="text-white text-decoration-none">ゲーム一覧ページ</a>
+                            </li>
+                            <li class="list-group-item bg-success text-white">
+                                <a href="{{ route('consoles.index') }}" class="text-white text-decoration-none">コンソール一覧ページ</a>
+                            </li>
+                            <li class="list-group-item bg-secondary text-white">
+                                <a href="{{ route('performances.index') }}" class="text-white text-decoration-none">パフォーマンス一覧ページ</a>
+                            </li>
                           </ul>
                         </div>
                       </div>
