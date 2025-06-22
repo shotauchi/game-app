@@ -2,9 +2,16 @@
 
 @section('content')
 <!-- サイト名 -->
+<style>
+        
+        body {
+        background-color: #f0f8ff; /* 背景色：薄い青色
+    }
+    
+</style>
 
 <div class="container mt-5">
-    <h2 style="color: #ff8c00;">Create New Console</h2> <!-- 濃いオレンジ -->
+    <h2 style="color: #ff8c00;">コンソールの新規作成</h2> <!-- 濃いオレンジ -->
 
     @if(session('success'))
         <div class="alert alert-success">{{ session('success') }}</div>

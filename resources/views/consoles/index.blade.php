@@ -7,6 +7,7 @@
         body {
         background-color: #f0f8ff; /* 背景色：薄い青 */
         color: #28a745;           /* 文字色：濃いグレー */
+        
     }
     
 </style>
@@ -21,15 +22,16 @@
       <th scope="col">introduction</th>
       <th scope="col">Manufacturer</th>
       <th scope="col">use</th>
+      
     </tr>
   </thead>
   <tbody>
     @forelse ($consoles as $console)
     <tr>
-      <th scope="row">{{ $loop->iteration }}</th>
-      <td>{{ $console->introduction }}</td>
-      <td>{{ $console->Manufacturer }}</td>
-      <td>{{ $console->use }}</td>
+      <th scope="row"><span style="color: green;">{{ $loop->iteration }}</th>
+      <td><span style="color: red;">{{ $console->introduction }}</span></td>
+      <td><span style="color: blue;">{{ $console->Manufacturer }}</span></td>
+      <td><span style="color: purple;">{{ $console->use }}</span></td>
     </tr>
     @empty
     <tr>
