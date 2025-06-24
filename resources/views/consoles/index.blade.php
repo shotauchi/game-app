@@ -11,11 +11,13 @@
     }
     
 </style>
-
         <div class="text-center my-4">
             <h1>コンソール一覧画面です</h1>
         </div>
-        <table class="table">
+<div class="container my-5">
+  <div class="row justify-content-center">
+    <div class="col-md-10">
+      <table class="table table-bordered table-striped text-center">
   <thead>
     <tr>
       <th scope="col">#</th>
@@ -42,5 +44,7 @@
     @endforelse
   </tbody>
 </table>
-        
+ </div>
+</div>
+
 @endsection
