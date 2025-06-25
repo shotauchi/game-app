@@ -39,7 +39,9 @@
 
         <div class="mb-3">
             <label for="GPU" class="form-label" style="color: #ff8c00;">GPU</label> <!-- 濃いオレンジ -->
-            <input type="text" name="GPU" id="GPU" class="form-control @error('GPU') is-invalid @enderror" value="{{ old('GPU') }}">
+            <div class="col-3">
+                <input type="text" name="GPU" id="GPU" class="form-control @error('GPU') is-invalid @enderror" value="{{ old('GPU') }}">
+            </div>
             @error('GPU')
                 <div class="invalid-feedback">{{ $message }}</div>
             @enderror
@@ -47,7 +49,9 @@
 
         <div class="mb-3">
             <label for="CPU" class="form-label" style="color: #b8860b;">CPU</label> <!-- 濃い黄色 -->
-            <input type="text" name="CPU" id="CPU" class="form-control @error('CPU') is-invalid @enderror" value="{{ old('CPU') }}">
+            <div class="col-3">
+                <input type="text" name="CPU" id="CPU" class="form-control @error('CPU') is-invalid @enderror" value="{{ old('CPU') }}">
+            </div>
             @error('CPU')
                 <div class="invalid-feedback">{{ $message }}</div>
             @enderror

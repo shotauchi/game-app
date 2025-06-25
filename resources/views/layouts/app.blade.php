@@ -23,7 +23,7 @@
 <body>
     <div id="app">
         <!-- ナビバー -->
-        <nav class="navbar bg-light d-flex justify-content-between px-3">
+        <nav class="navbar bg-light bg-opacity-25 d-flex justify-content-between px-3">
             <div class="d-flex align-items-center">
                 <div class="rounded-circle bg-warning d-flex justify-content-center align-items-center" style="width: 50px; height: 50px;">
                     ロゴ
@@ -41,7 +41,7 @@
         </main>
         
         <!-- フッター -->
-        <footer class="bg-light mt-auto py-4 px-3 d-flex justify-content-end">
+        <footer class="bg-light bg-opacity-25 mt-auto py-4 px-3 d-flex justify-content-end">
         <div class="rounded-circle bg-warning d-flex justify-content-center align-items-center" style="width: 70px; height: 70px;">
             戻る
         </div>
