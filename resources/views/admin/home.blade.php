@@ -32,19 +32,22 @@
 <div class="text-center my-4">
  <h1>管理者画面です!!</h1>
 </div>
-<a href="{{ route('admin.consoles.create') }}" class="btn btn-primary">
-新しいコンソールを作成
-</a>
-<a href="{{ route('admin.performances.create') }}" class="btn btn-primary">
-新しいパフォーマンスを作成
-</a>
-<form method="POST" action="{{ route('admin.logout') }}" class="d-inline">
-    @csrf
-    <button type="submit" class="logout-button">
-    ログアウト
-    </button>
-</form>
+<div class="d-flex justify-content-center vh-100">
+    <div class="d-flex flex-column gap-3 text-center">
+        <a href="{{ route('admin.consoles.create') }}" class="btn btn-primary">
+        新しいコンソールを作成
+        </a>
+        <a href="{{ route('admin.performances.create') }}" class="btn btn-primary">
+        新しいパフォーマンスを作成
+        </a>
         
-        
+        <form method="POST" action="{{ route('admin.logout') }}" class="d-inline">
+            @csrf
+            <button type="submit" class="btn btn-outline-danger">
+            ログアウト
+            </button>
+        </form>
+    </div>    
+</div>    
         
 @endsection
