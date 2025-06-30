@@ -11,7 +11,7 @@
     
 </style>
 
-<div class="container mt-5">
+<div class="container card py-5 px-3 mt-5">
     <h2 style="color: #006400;">パフォーマンスの新規作成</h2> <!-- 濃い緑 -->
 
     @if(session('success'))

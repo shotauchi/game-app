@@ -42,8 +42,11 @@
         
         <!-- フッター -->
         <footer class="bg-light bg-opacity-25 mt-auto py-4 px-3 d-flex justify-content-end">
-        <div class="rounded-circle bg-warning d-flex justify-content-center align-items-center" style="width: 70px; height: 70px;">
-            戻る
+        <a href="/games">
+  <div style="position: fixed; bottom: 20px; right: 20px; background-color: gold; border-radius: 50%; width: 60px; height: 60px; display: flex; align-items: center; justify-content: center; font-weight: bold;">
+    戻る
+  </div>
+</a>
         </div>
         </footer>
     </div>

@@ -10,13 +10,19 @@
     
 </style>
 
-<div class="container mt-5">
+<div class="container card py-5 px-3 mt-5">
     <h2 style="color: #ff8c00;">コンソールの新規作成</h2> <!-- 濃いオレンジ -->
 
     @if(session('success'))
         <div class="alert alert-success">{{ session('success') }}</div>
     @endif
     
+<a href="/">
+  <div style="position: fixed; bottom: 20px; right: 20px; background-color: gold; border-radius: 50%; width: 60px; height: 60px; display: flex; align-items: center; justify-content: center; font-weight: bold;">
+    戻る
+  </div>
+</a>
+
     <form action="{{ route('consoles.store') }}" method="POST">
         @csrf
 
