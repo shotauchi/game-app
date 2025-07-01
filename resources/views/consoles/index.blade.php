@@ -15,11 +15,11 @@
             <h1>コンソール一覧画面です</h1>
         </div>
         
-<div class="container-sm bg-danger">100% wide until small breakpoint</div>
-<div class="container-md bg-warning">100% wide until medium breakpoint</div>
-<div class="container-lg bg-danger">100% wide until large breakpoint</div>
-<div class="container-xl bg-warning">100% wide until extra large breakpoint</div>
-<div class="container-xxl bg-danger">100% wide until extra extra large breakpoint</div>      
+<!--<div class="container-sm bg-danger">100% wide until small breakpoint</div>-->
+<!--<div class="container-md bg-warning">100% wide until medium breakpoint</div>-->
+<!--<div class="container-lg bg-danger">100% wide until large breakpoint</div>-->
+<!--<div class="container-xl bg-warning">100% wide until extra large breakpoint</div>-->
+<!--<div class="container-xxl bg-danger">100% wide until extra extra large breakpoint</div>      -->
         
 <div class="container my-5">
   <div class="row justify-content-center">
