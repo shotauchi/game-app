@@ -6,6 +6,8 @@ use Illuminate\Http\Request;
 
 use App\Models\Game;
 
+use App\Models\Performance;
+
 class GameController extends Controller
 {
     /**
@@ -38,8 +40,10 @@ class GameController extends Controller
      */
     public function store(Request $request)
     {
+    
         $game = new Game;
         $form = $request->all();
+        //dd($form);
         $game->fill($form);
         $game->save();
         return redirect()->route('admin.games.create')->with('success', 'Game created successfully!');

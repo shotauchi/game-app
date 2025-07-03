@@ -57,11 +57,13 @@ Route::middleware(['admin'])->group(function () {
     Route::get('/performances/create', [PerformanceController::class, 'create'])->name('admin.performances.create');
     
     Route::post('/performances/create', [PerformanceController::class, 'store'])->name('performances.store');
+    
+    Route::get('/games/create', [GameController::class, 'create'])->name('admin.games.create');
+    
+    Route::post('/games/create', [GameController::class, 'store'])->name('games.store');
+    
 });
 
-Route::get('/games/create', function () {
-    return view('games.new');
-})->name('admin.games.create');
 
 
 Route::get('/games', [GameController::class, 'index'])->name('games.index');

@@ -21,7 +21,7 @@
                    id="performance{{ $performance->id }}"
                    value="{{ $performance->id }}">
             <label class="form-check-label" for="performance{{ $performance->id }}">
-              {{ $performance->use }} 
+              {{ $performance->GPU }} 
             </label>
           </div>
         @endforeach
