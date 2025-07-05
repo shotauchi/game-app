@@ -2,9 +2,17 @@
 
 @section('content')
 <!-- サイト名 -->
-<div class="text-center my-4">
- <h1>ゲームの新規作成画面です</h1>
-</div>
+<style>
+        
+        body {
+        background-color: #f0f8ff; /* 背景色：薄い青 */
+        color: #28a745;           /* 文字色：濃いグレー */
+    }
+    
+</style>
+
+<div class="container card py-5 px-3 mt-5">
+ <h2 style="color: #0000FF;">ゲームの新規作成</h2>
 
 @if(session('success'))
         <div class="alert alert-success">{{ session('success') }}</div>
@@ -40,7 +48,7 @@
         </div>
 
         <div class="mb-3">
-            <label for="URL" class="form-label" style="color: #b8860b;">URL</label> <!-- 濃い黄色 -->
+            <label for="URL" class="form-label" style="color: #800080;">URL</label> <!-- 濃い黄色 -->
             <div class="col-3">
                 <input type="text" name="URL" id="URL" class="form-control @error('URL') is-invalid @enderror" value="{{ old('URL') }}">
             </div>
@@ -50,7 +58,7 @@
         </div>
         
         <div class="mb-3">
-            <label for="site" class="form-label" style="color: #b8860b;">site</label> <!-- 濃い黄色 -->
+            <label for="site" class="form-label" style="color: #006400;">site</label> <!-- 濃い黄色 -->
             <div class="col-3">
                 <input type="text" name="site" id="site" class="form-control @error('site') is-invalid @enderror" value="{{ old('site') }}">
             </div>
@@ -71,7 +79,7 @@
         
         <button type="submit" class="btn btn-primary">Submit</button>
     </form>
-        
+</div>
         
         
 @endsection

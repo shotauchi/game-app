@@ -34,10 +34,16 @@
 </div>
 <div class="d-flex justify-content-center vh-100">
     <div class="d-flex flex-column gap-3 text-center">
-        <a href="{{ route('admin.consoles.create') }}" class="btn btn-primary">
+        
+         <a href="{{ route('admin.games.create') }}" class="btn btn-primary">
+        新しいゲームを作成
+        </a>
+        
+        <a href="{{ route('admin.consoles.create') }}" class="btn btn-warning">
         新しいコンソールを作成
         </a>
-        <a href="{{ route('admin.performances.create') }}" class="btn btn-primary">
+        
+        <a href="{{ route('admin.performances.create') }}" class="btn btn-success">
         新しいパフォーマンスを作成
         </a>
         
