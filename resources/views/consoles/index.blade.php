@@ -31,16 +31,18 @@
       <th scope="col">introduction</th>
       <th scope="col">Manufacturer</th>
       <th scope="col">use</th>
+      <th scope="col">delete</th>
       
     </tr>
   </thead>
   <tbody>
     @forelse ($consoles as $console)
     <tr>
-      <th scope="row"><span style="color: green;">{{ $loop->iteration }}</th>
+      <td scope="row"><span style="color: green;">{{ $loop->iteration }}</td>
       <td><span style="color: red;">{{ $console->introduction }}</span></td>
       <td><span style="color: blue;">{{ $console->Manufacturer }}</span></td>
       <td><span style="color: purple;">{{ $console->use }}</span></td>
+      <td><button type="button" class="btn btn-info">削除</button></td>
     </tr>
     @empty
     <tr>
