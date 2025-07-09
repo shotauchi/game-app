@@ -5,8 +5,8 @@
 <style>
         
         body {
-        background-color: #f0f8ff; /* 背景色：薄い青 */
-        color: #28a745;           /* 文字色：濃いグレー */
+        background-color: #e0e7ff; /* 背景色：薄い青 */
+        color: #7192ff;           /* 文字色：濃いグレー */
     }
     
 </style>
@@ -47,15 +47,6 @@
             @enderror
         </div>
 
-        <div class="mb-3">
-            <label for="URL" class="form-label" style="color: #800080;">URL</label> <!-- 濃い黄色 -->
-            <div class="col-3">
-                <input type="text" name="URL" id="URL" class="form-control @error('URL') is-invalid @enderror" value="{{ old('URL') }}">
-            </div>
-            @error('URL')
-                <div class="invalid-feedback">{{ $message }}</div>
-            @enderror
-        </div>
         
         <div class="mb-3">
             <label for="site" class="form-label" style="color: #006400;">site</label> <!-- 濃い黄色 -->
@@ -73,6 +64,16 @@
                 <input type="text" name="introduction" id="introduction" class="form-control @error('introduction') is-invalid @enderror" value="{{ old('introduction') }}">
             </div>
             @error('introduction')
+                <div class="invalid-feedback">{{ $message }}</div>
+            @enderror
+        </div>
+        
+        <div class="mb-3">
+            <label for="URL" class="form-label" style="color: #800080;">URL</label> <!-- 濃い黄色 -->
+            <div class="col-3">
+                <input type="text" name="URL" id="URL" class="form-control @error('URL') is-invalid @enderror" value="{{ old('URL') }}">
+            </div>
+            @error('URL')
                 <div class="invalid-feedback">{{ $message }}</div>
             @enderror
         </div>

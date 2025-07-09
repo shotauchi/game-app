@@ -5,7 +5,7 @@
 <style>
         
         body {
-        background-color: #f0f8ff; /* 背景色：薄い青 */
+        background-color: #b4ffb2; /* 背景色：薄い青 */
         color: #28a745;           /* 文字色：濃いグレー */
         
     }
@@ -24,6 +24,7 @@
             <th scope="col">#</th>
             <th scope="col">CPU</th>
             <th scope="col">GPU</th>
+            <th scope="col">delete</th>
           </tr>
         </thead>
         <tbody>
@@ -32,6 +33,7 @@
             <th scope="row"><span style="color: green;">{{ $loop->iteration }}</th>
             <td><span style="color: blue;">{{ $performance->CPU }}</td>
             <td><span style="color: purple;">{{ $performance->GPU }}</td>
+            <td><button type="button" class="btn btn-success">delete</button></td>
           </tr>
           @empty
           <tr>

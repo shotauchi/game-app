@@ -5,8 +5,8 @@
 <style>
         
         body {
-        background-color: #f0f8ff; /* 背景色：薄い青 */
-        color: #28a745;           /* 文字色：濃いグレー */
+        background-color: #ffe88b; 
+        color: #ff9b00;           /* 文字色：濃いグレー */
         
     }
     
@@ -42,7 +42,7 @@
       <td><span style="color: red;">{{ $console->introduction }}</span></td>
       <td><span style="color: blue;">{{ $console->Manufacturer }}</span></td>
       <td><span style="color: purple;">{{ $console->use }}</span></td>
-      <td><button type="button" class="btn btn-info">削除</button></td>
+      <td><button type="button" class="btn btn-warning">削除</button></td>
     </tr>
     @empty
     <tr>

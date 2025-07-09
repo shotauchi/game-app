@@ -2,6 +2,17 @@
 
 @section('content')
 <!-- サイト名 -->
+
+<style>
+        
+        body {
+        background-color: #e0e7ff; /* 背景色：薄い青 */
+        color: #7192ff;           /* 文字色：濃いグレー */
+        
+    }
+    
+</style>
+
         <div class="text-center my-4">
             <h1>ゲーム一覧画面です</h1>
         </div>
@@ -13,9 +24,10 @@
           <tr>
             <th scope="col">#</th>
             <th scope="col">image</th>
-            <th scope="col">URL</th>
             <th scope="col">site</th>
             <th scope="col">introduction</th>
+            <th scope="col">URL</th>
+            <th scope="col">delete</th>
           </tr>
         </thead>
         <tbody>
@@ -23,9 +35,10 @@
           <tr>
             <th scope="row"><span style="color: green;">{{ $loop->iteration }}</th>
             <td><span style="color: blue;">{{ $game->image }}</td>
-            <td><span style="color: red;">{{ $game->URL }}</td>
             <td><span style="color: orange;">{{ $game->site }}</td>
             <td><span style="color: purple;">{{ $game->introduction }}</td>
+            <td><span style="color: red;">{{ $game->URL }}</td>
+            <td><button type="button" class="btn btn-info">delete</button></td>
           </tr>
           @empty
           <tr>
