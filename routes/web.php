@@ -51,12 +51,16 @@ Route::middleware(['admin'])->group(function () {
     
     Route::post('/consoles/create', [ConsoleController::class, 'store'])->name('consoles.store');
     
+    Route::delete('/consoles/{id}', [ConsoleController::class, 'destroy'])->name('consoles.destroy');
+    
     // Route::get('/performances/create', function () {
     //     return view('performances.new');
     // })->name('admin.performances.create');
     Route::get('/performances/create', [PerformanceController::class, 'create'])->name('admin.performances.create');
     
     Route::post('/performances/create', [PerformanceController::class, 'store'])->name('performances.store');
+    
+    Route::delete('/performances/{id}', [PerformanceController::class, 'destroy'])->name('performances.destroy');
     
     Route::get('/games/create', [GameController::class, 'create'])->name('admin.games.create');
     

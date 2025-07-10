@@ -90,6 +90,9 @@ class PerformanceController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $performance = Performance::findOrFail($id);
+    $performance->delete();
+
+    return redirect()->route('performances.index')->with('success', 'パフォーマンスを削除しました');
     }
 }

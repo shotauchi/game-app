@@ -33,7 +33,12 @@
             <th scope="row"><span style="color: green;">{{ $loop->iteration }}</th>
             <td><span style="color: blue;">{{ $performance->CPU }}</td>
             <td><span style="color: purple;">{{ $performance->GPU }}</td>
-            <td><button type="button" class="btn btn-success">delete</button></td>
+            <td><form action="{{ route('performances.destroy', $performance->id) }}" method="POST" onsubmit="return confirm('本当に削除してよろしいですか？');">
+          @csrf
+          @method('DELETE')
+          <button type="submit" class="btn btn-success">delete</button>
+        　　　　　　</form>
+        　　　</td>
           </tr>
           @empty
           <tr>

@@ -89,6 +89,9 @@ class ConsoleController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $console = Console::findOrFail($id);
+    $console->delete();
+
+    return redirect()->route('consoles.index')->with('success', 'コンソールを削除しました');
     }
 }
