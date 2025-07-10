@@ -91,6 +91,9 @@ class GameController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $game = Game::findOrFail($id); // IDに該当するゲーム情報を取得
+    $game->delete();               // データベースから削除
+
+    return redirect()->route('games.index')->with('success', 'ゲームを削除しました');
     }
 }

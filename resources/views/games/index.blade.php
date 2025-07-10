@@ -38,8 +38,13 @@
             <td><span style="color: orange;">{{ $game->site }}</td>
             <td><span style="color: purple;">{{ $game->introduction }}</td>
             <td><span style="color: red;">{{ $game->URL }}</td>
-            <td><button type="button" class="btn btn-info">delete</button></td>
-          </tr>
+            <td><form action="{{ route('games.destroy', $game->id) }}" method="POST" onsubmit="return confirm('本当に削除してよろしいですか？');">
+          @csrf
+          @method('DELETE')
+          <button type="submit" class="btn btn-info">delete</button>
+               </form>
+            </td>
+         </tr>
           @empty
           <tr>
             <th scope="row">-</th>

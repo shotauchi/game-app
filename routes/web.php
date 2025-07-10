@@ -62,6 +62,8 @@ Route::middleware(['admin'])->group(function () {
     
     Route::post('/games/create', [GameController::class, 'store'])->name('games.store');
     
+    Route::delete('/games/{id}', [GameController::class, 'destroy'])->name('games.destroy');
+    
 });
 
 
