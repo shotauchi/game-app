@@ -34,10 +34,10 @@
           @forelse ($games as $game)
           <tr>
             <th scope="row"><span style="color: green;">{{ $loop->iteration }}</th>
-            <td><span style="color: blue;">{{ $game->image }}</td>
-            <td><span style="color: orange;">{{ $game->site }}</td>
-            <td><span style="color: purple;">{{ $game->introduction }}</td>
-            <td><span style="color: red;">{{ $game->URL }}</td>
+            <td><span style="color: blue;">{{ $game->image }}</span></td>
+            <td><span style="color: orange;">{{ $game->site }}</span></td>
+            <td><span style="color: purple;">{{ $game->introduction }}</span></td>
+            <td><span style="color: red;">{{ $game->URL }}</span></td>
             <td><form action="{{ route('games.destroy', $game->id) }}" method="POST" onsubmit="return confirm('本当に削除してよろしいですか？');">
           @csrf
           @method('DELETE')

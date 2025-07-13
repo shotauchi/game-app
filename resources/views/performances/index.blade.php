@@ -31,10 +31,10 @@
           @forelse ($performances as $performance)
           <tr>
             <th scope="row"><span style="color: green;">{{ $loop->iteration }}</th>
-            <td><span style="color: blue;">{{ $performance->CPU }}</td>
-            <td><span style="color: purple;">{{ $performance->GPU }}</td>
+            <td><span style="color: blue;">{{ $performance->CPU }}</span></td>
+            <td><span style="color: purple;">{{ $performance->GPU }}</span></td>
             <td><form action="{{ route('performances.destroy', $performance->id) }}" method="POST" onsubmit="return confirm('本当に削除してよろしいですか？');">
-          @csrf
+            @csrf
           @method('DELETE')
           <button type="submit" class="btn btn-success">delete</button>
         　　　　　　</form>
