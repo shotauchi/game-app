@@ -17,12 +17,6 @@
     @if(session('success'))
         <div class="alert alert-success">{{ session('success') }}</div>
     @endif
-    
-<a href="/">
-  <div style="position: fixed; bottom: 20px; right: 20px; background-color: gold; border-radius: 50%; width: 60px; height: 60px; display: flex; align-items: center; justify-content: center; font-weight: bold;">
-    戻る
-  </div>
-</a>
 
     <form action="{{ route('consoles.store') }}" method="POST">
         @csrf
@@ -57,8 +51,12 @@
         <button type="submit" class="btn btn-primary">Submit</button>
     </form>
 </div>
-
-        
+<!-- ① 新規作成フォームの後に追加 -->
+<div class="text-end mt-3 me-3">
+    <a href="{{ route('consoles.index') }}" class="btn btn-outline-warning">
+        コンソール一覧画面へ
+    </a>
+</div>
         
         
 @endsection

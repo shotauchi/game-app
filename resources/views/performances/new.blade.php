@@ -59,14 +59,12 @@
 
         <button type="submit" class="btn btn-primary">Submit</button>
     </form>
-</div>
-<!-- ① 新規作成フォームの後に追加 -->
-<div class="text-end mt-3 me-3">
-    <a href="{{ route('performances.index') }}" class="btn btn-outline-primary">
-        パフォーマンス一覧画面へ
-    </a>
-</div>
-        
-        
+ </div>
+    <!-- ① 新規作成フォームの後に追加 -->
+    <div class="text-end mt-3 me-3">
+        <a href="{{ route('performances.index') }}" class="btn btn-outline-success">
+            パフォーマンス一覧画面へ
+        </a>
+    </div>
         
 @endsection
