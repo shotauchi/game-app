@@ -28,6 +28,7 @@
             <th scope="col">introduction</th>
             <th scope="col">URL</th>
             <th scope="col">delete</th>
+            <th scope="col">edit</th>
           </tr>
         </thead>
         <tbody>
@@ -38,13 +39,21 @@
             <td><span style="color: orange;">{{ $game->site }}</span></td>
             <td><span style="color: purple;">{{ $game->introduction }}</span></td>
             <td><span style="color: red;">{{ $game->URL }}</span></td>
-            <td><form action="{{ route('games.destroy', $game->id) }}" method="POST" onsubmit="return confirm('本当に削除してよろしいですか？');">
-          @csrf
-          @method('DELETE')
-          <button type="submit" class="btn btn-info">delete</button>
-               </form>
+            <td>
+              <form action="{{ route('games.destroy', $game->id) }}" method="POST" onsubmit="return confirm('本当に削除してよろしいですか？');">
+                @csrf
+                @method('DELETE')
+                <button type="submit" class="btn btn-info">delete</button>
+              </form>
             </td>
-         </tr>
+            <td>
+              <form action="{{ route('games.edit', $game->id) }}" method="POST" onsubmit="return confirm('本当に編集してよろしいですか？');">
+                @csrf
+                @method('POST')
+                <button type="submit" class="btn btn-info">edit</button>
+              </form>
+            </td>
+          </tr>
           @empty
           <tr>
             <th scope="row">-</th>

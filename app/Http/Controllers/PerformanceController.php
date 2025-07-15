@@ -67,7 +67,10 @@ class PerformanceController extends Controller
      */
     public function edit($id)
     {
-        //
+        $performance = Performance::findOrFail($id); // IDに該当するゲーム情報を取得
+    $performance->edit();               // データベースを編集
+
+    return redirect()->route('performances.index')->with('success', 'パフォーマンスを編集しました');
     }
 
     /**

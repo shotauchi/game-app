@@ -32,6 +32,7 @@
       <th scope="col">Manufacturer</th>
       <th scope="col">use</th>
       <th scope="col">delete</th>
+      <th scope="col">edit</th>
       
     </tr>
   </thead>
@@ -46,6 +47,13 @@
           @csrf
           @method('DELETE')
           <button type="submit" class="btn btn-warning">delete</button>
+          </form>
+      </td>
+      <td>
+          <form action="{{ route('consoles.edit', $console->id) }}" method="POST" onsubmit="return confirm('本当に編集してよろしいですか？');">
+                @csrf
+                @method('POST')
+                <button type="submit" class="btn btn-info">edit</button>
           </form>
       </td>
     </tr>
