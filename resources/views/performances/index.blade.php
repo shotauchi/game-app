@@ -25,6 +25,7 @@
             <th scope="col">CPU</th>
             <th scope="col">GPU</th>
             <th scope="col">delete</th>
+            <th scope="col">edit</th>
           </tr>
         </thead>
         <tbody>
@@ -39,6 +40,13 @@
           <button type="submit" class="btn btn-success">delete</button>
         　　　　　　</form>
         　　　</td>
+        　　<td>
+                <form action="{{ route('performances.edit', $performance->id) }}" method="POST" onsubmit="return confirm('本当に編集してよろしいですか？');">
+                      @csrf
+                      @method('POST')
+                      <button type="submit" class="btn btn-info">edit</button>
+                </form>
+            </td>
           </tr>
           @empty
           <tr>
