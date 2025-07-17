@@ -74,7 +74,11 @@ Route::middleware(['admin'])->group(function () {
     
     Route::delete('/games/{id}', [GameController::class, 'destroy'])->name('games.destroy');
     
-    Route::get('/games/{id}', [GameController::class, 'edit'])->name('games.edit');
+    // 編集画面用ルート
+    //Route::post('/games/{id}/edit', [GameController::class, 'edit'])->name('games.edit');
+    
+    Route::get('/games/{id}/edit', [GameController::class, 'edit'])->name('games.edit');
+
     
 });
 

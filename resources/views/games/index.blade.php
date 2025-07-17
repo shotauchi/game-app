@@ -47,11 +47,7 @@
               </form>
             </td>
             <td>
-              <form action="{{ route('games.edit', $game->id) }}" method="POST" onsubmit="return confirm('本当に編集してよろしいですか？');">
-                @csrf
-                @method('POST')
-                <button type="submit" class="btn btn-info">edit</button>
-              </form>
+              <a href="{{ route('games.edit', $game->id) }}" class="btn btn-info">edit</a>
             </td>
           </tr>
           @empty

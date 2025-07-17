@@ -37,7 +37,7 @@
         <!--</nav>-->
 
             <nav class="navbar bg-body-tertiary fixed-top">
-      <div class="container-fluid">
+      <div class="container-fluid d-flex justify-content-between align-items-center">
         <nav class="navbar bg-light bg-opacity-25 d-flex justify-content-between px-3">
             <div class="d-flex align-items-center">
                 <div class="rounded-circle bg-warning d-flex justify-content-center align-items-center" style="width: 50px; height: 50px;">

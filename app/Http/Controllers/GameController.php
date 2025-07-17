@@ -68,10 +68,12 @@ class GameController extends Controller
      */
     public function edit($id)
     {
-        $game = Game::findOrFail($id); // IDに該当するゲーム情報を取得
-    $game->edit();               // データベースを編集
 
-    return redirect()->route('games.index')->with('success', 'ゲームを編集しました');
+    // ① 該当ゲームデータを取得
+    $game = Game::findOrFail($id);
+
+    // ② 編集用のビューにデータを渡して表示
+    return view('games.edit', compact('game'));
     }
 
     /**
