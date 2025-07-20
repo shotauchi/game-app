@@ -55,7 +55,7 @@ Route::middleware(['admin'])->group(function () {
     
     Route::post('/consoles/{id}', [ConsoleController::class, 'edit'])->name('consoles.edit');
     
-    Route::get('/consoles/{id}', [ConsoleController::class, 'edit'])->name('consoles.edit');
+    Route::get('/consoles/{id}/edit', [ConsoleController::class, 'edit'])->name('consoles.edit');
     
     // Route::get('/performances/create', function () {
     //     return view('performances.new');
@@ -66,7 +66,7 @@ Route::middleware(['admin'])->group(function () {
     
     Route::delete('/performances/{id}', [PerformanceController::class, 'destroy'])->name('performances.destroy');
     
-    Route::get('/performances/{id}', [PerformanceController::class, 'edit'])->name('performances.edit');
+    Route::get('/performances/{id}/edit', [PerformanceController::class, 'edit'])->name('performances.edit');
     
     Route::get('/games/create', [GameController::class, 'create'])->name('admin.games.create');
     

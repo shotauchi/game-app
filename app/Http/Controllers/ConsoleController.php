@@ -66,10 +66,11 @@ class ConsoleController extends Controller
      */
     public function edit($id)
     {
-        $console = Console::findOrFail($id); // IDに該当するゲーム情報を取得
-    $console->edit();               // データベースを編集
+         // ① 該当ゲームデータを取得
+    $console = Console::findOrFail($id);
 
-    return redirect()->route('consoles.index')->with('success', 'コンソールを編集しました');
+    // ② 編集用のビューにデータを渡して表示
+    return view('consoles.edit', compact('console'));
     }
 
     /**
