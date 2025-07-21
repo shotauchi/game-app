@@ -82,7 +82,17 @@ class ConsoleController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $console = Console::findOrFail($id);
+
+    $validated = $request->validate([
+        'site' => 'required|string|max:255',
+        'introduction' => 'required|string',
+        'Manufacturer' => 'required|string|max:255', 
+    ]);
+
+    $console->update($validated);
+
+    return redirect()->route('consoles.index')->with('success', 'コンソールを更新しました');
     }
 
     /**

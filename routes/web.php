@@ -57,6 +57,9 @@ Route::middleware(['admin'])->group(function () {
     
     Route::get('/consoles/{id}/edit', [ConsoleController::class, 'edit'])->name('consoles.edit');
     
+    Route::put('/consoles/{id}', [ConsoleController::class, 'update'])->name('consoles.update');
+
+    
     // Route::get('/performances/create', function () {
     //     return view('performances.new');
     // })->name('admin.performances.create');
