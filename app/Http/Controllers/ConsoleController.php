@@ -85,7 +85,7 @@ class ConsoleController extends Controller
         $console = Console::findOrFail($id);
 
     $validated = $request->validate([
-        'site' => 'required|string|max:255',
+        'use' => 'required|string|max:255',
         'introduction' => 'required|string',
         'Manufacturer' => 'required|string|max:255', 
     ]);

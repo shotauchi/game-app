@@ -83,7 +83,16 @@ class PerformanceController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $performances = Performance::findOrFail($id);
+
+    $validated = $request->validate([
+        'CPU' => 'required|string|max:255',
+        'GPU' => 'required|string|max:255',
+    ]);
+
+    $performance->update($validated);
+
+    return redirect()->route('performances.index')->with('success', 'パフォーマンスを更新しました');
     }
 
     /**

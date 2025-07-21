@@ -85,7 +85,18 @@ class GameController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $game = Game::findOrFail($id);
+
+    $validated = $request->validate([
+        'image' => 'required|string|max:255',
+        'url' => 'required|string|max:255',
+        'site' => 'required|string|max:255',
+        'introduction' => 'required|string',
+    ]);
+
+    $game->update($validated);
+
+    return redirect()->route('games.index')->with('success', 'ゲームを更新しました');
     }
 
     /**

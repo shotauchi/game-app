@@ -71,6 +71,9 @@ Route::middleware(['admin'])->group(function () {
     
     Route::get('/performances/{id}/edit', [PerformanceController::class, 'edit'])->name('performances.edit');
     
+    Route::put('/performances/{id}', [PerformanceController::class, 'update'])->name('performances.update');
+
+    
     Route::get('/games/create', [GameController::class, 'create'])->name('admin.games.create');
     
     Route::post('/games/create', [GameController::class, 'store'])->name('games.store');
@@ -81,6 +84,8 @@ Route::middleware(['admin'])->group(function () {
     //Route::post('/games/{id}/edit', [GameController::class, 'edit'])->name('games.edit');
     
     Route::get('/games/{id}/edit', [GameController::class, 'edit'])->name('games.edit');
+   
+    Route::put('/games/{id}', [GameController::class, 'update'])->name('games.update');
 
     
 });
