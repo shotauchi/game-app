@@ -83,7 +83,7 @@ class PerformanceController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $performances = Performance::findOrFail($id);
+        $performance = Performance::findOrFail($id);
 
     $validated = $request->validate([
         'CPU' => 'required|string|max:255',
