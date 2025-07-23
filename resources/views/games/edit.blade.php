@@ -15,8 +15,8 @@
         </div>
         
         <div class="mb-3">
-            <label for="URL" class="form-label">URL</label>
-            <input type="text" name="URL" id="URL" class="form-control" value="{{ old('URL', $game->URL) }}" required>
+            <label for="url" class="form-label">URL</label>
+            <input type="text" name="url" id="url" class="form-control" value="{{ old('url', $game->url) }}" required>
         </div>
         
         <div class="mb-3">

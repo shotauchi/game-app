@@ -7,6 +7,8 @@ use Illuminate\Database\Eloquent\Model;
 
 class Performance extends Model
 {
-    use HasFactory;
-    protected $fillable = ['console_id','CPU','GPU'];
+    protected $fillable = [
+        'CPU',
+        'GPU',
+    ];
 }
