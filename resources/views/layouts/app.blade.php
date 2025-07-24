@@ -16,7 +16,11 @@
     <!-- Scripts -->
     <script src="{{ secure_asset('js/app.js') }}" defer></script>
     <link href="{{ secure_asset('css/app.css') }}" rel="stylesheet">
-    
+        <!-- Google font Icon -->
+    <link
+    	href="https://fonts.googleapis.com/icon?family=Material+Icons"
+    	rel="stylesheet"
+    />
     <!--一旦cdnでブートストラップを読み込む-->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
 </head>
@@ -36,7 +40,7 @@
         <!--    </div>-->
         <!--</nav>-->
 
-            <nav class="navbar bg-body-tertiary fixed-top">
+    <nav class="navbar bg-body-tertiary fixed-top">
       <div class="container-fluid d-flex justify-content-between align-items-center">
         <nav class="navbar bg-light bg-opacity-25 d-flex justify-content-between px-3">
             <div class="d-flex align-items-center">
@@ -83,8 +87,11 @@
               </div>
             </div>
           </div>
-        </nav>
+      </nav>
         
+    <main class="py-4">
+        @yield('content')
+    </main>
         <!-- フッター -->
         <footer class="bg-light bg-opacity-25 mt-auto py-4 px-3 d-flex justify-content-end">
             <a href="/admin">
@@ -97,7 +104,3 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
-
-    <main class="py-4">
-        @yield('content')
-    </main>
