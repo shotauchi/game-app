@@ -28,6 +28,21 @@
         
 </style>
 
+<!-- ヘッダーエリア -->
+<nav class="d-flex justify-content-between align-items-center p-3 border-bottom">
+    <!-- ロゴ（左側） -->
+    <div class="logo">
+        <a href="/" class="text-decoration-none text-dark fs-4 fw-bold">Myロゴ</a>
+    </div>
+
+    <!-- ナビゲーションバー（右側） -->
+    <div class="nav-links d-flex gap-3">
+        <a href="{{ route('admin.games.index') }}" class="btn btn-sm btn-outline-primary">ゲーム一覧</a>
+        <a href="{{ route('admin.consoles.index') }}" class="btn btn-sm btn-outline-warning">コンソール一覧</a>
+        <a href="{{ route('admin.performances.index') }}" class="btn btn-sm btn-outline-success">パフォーマンス一覧</a>
+    </div>
+</nav>
+
 <!-- サイト名 -->
 <div class="text-center my-4">
  <h1>管理者画面です!!</h1>
