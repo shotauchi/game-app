@@ -19,6 +19,8 @@ class GameController extends Controller
     {
         $games = Game::all();
         return view('games.index', compact('games')); // ビューへ渡す
+        
+        
     }
 
     /**
@@ -46,7 +48,7 @@ class GameController extends Controller
         //dd($form);
         $game->fill($form);
         $game->save();
-        return redirect()->route('admin.games.create')->with('success', 'Game created successfully!');
+        return redirect()->route('games.create')->with('success', 'Game created successfully!');
     }
 
     /**
@@ -112,4 +114,6 @@ class GameController extends Controller
 
     return redirect()->route('games.index')->with('success', 'ゲームを削除しました');
     }
+    
+    
 }

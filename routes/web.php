@@ -47,7 +47,7 @@ Route::middleware(['admin'])->group(function () {
     });
     Route::get('/consoles/create', function () {
         return view('consoles.new');
-    })->name('admin.consoles.create');
+    })->name('consoles.create');
     
     Route::post('/consoles/create', [ConsoleController::class, 'store'])->name('consoles.store');
     
@@ -63,7 +63,7 @@ Route::middleware(['admin'])->group(function () {
     // Route::get('/performances/create', function () {
     //     return view('performances.new');
     // })->name('admin.performances.create');
-    Route::get('/performances/create', [PerformanceController::class, 'create'])->name('admin.performances.create');
+    Route::get('/performances/create', [PerformanceController::class, 'create'])->name('performances.create');
     
     Route::post('/performances/create', [PerformanceController::class, 'store'])->name('performances.store');
     
@@ -74,7 +74,7 @@ Route::middleware(['admin'])->group(function () {
     Route::put('/performances/{id}', [PerformanceController::class, 'update'])->name('performances.update');
 
     
-    Route::get('/games/create', [GameController::class, 'create'])->name('admin.games.create');
+    Route::get('/games/create', [GameController::class, 'create'])->name('games.create');
     
     Route::post('/games/create', [GameController::class, 'store'])->name('games.store');
     
@@ -87,7 +87,9 @@ Route::middleware(['admin'])->group(function () {
    
     Route::put('/games/{id}', [GameController::class, 'update'])->name('games.update');
 
-    
+    // 管理者用ゲーム一覧ページ
+    Route::get('/admin/games', [GameController::class, 'adminIndex'])->name('games.index');
+   
 });
 
 
