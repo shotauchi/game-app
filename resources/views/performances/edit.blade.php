@@ -1,6 +1,16 @@
 @extends('layouts.app')
 
 @section('content')
+
+<style>
+        
+        body {
+        background-color: #b4ffb2; /* 背景色：薄い緑 */
+        color: #28a745;           /* 文字色：濃いグレー */
+    }
+    
+</style>
+
 <div class="text-center my-5">
     <h1>編集画面一覧です。</h1>
     
