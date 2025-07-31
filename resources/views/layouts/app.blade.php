@@ -23,10 +23,15 @@
     />
     <!--一旦cdnでブートストラップを読み込む-->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+  body {
+    padding-top: 60px;
+    padding-botton: 60px;
+  }
+</style>
 </head>
-<body>
+<body class="d-flex flex-column justify-content-between min-vh-100">
     <div id="app">
-
     <nav class="navbar bg-body-tertiary fixed-top">
       <div class="container-fluid d-flex justify-content-between align-items-center">
         <div class="d-flex align-items-center">
@@ -74,24 +79,18 @@
       </div>
     </nav>
         
-    <main class="py-4">
+    <main class="py-4 flex-grow-1 min-vh-100">
         @yield('content')
     </main>
-        <!-- フッター -->
-        <footer class="bg-light bg-opacity-25 mt-auto py-4 px-3 d-flex justify-content-end">
-            <a href="/admin">
-              <div style="position: fixed; bottom: 20px; right: 20px; background-color: gold; border-radius: 50%; width: 60px; height: 60px; display: flex; align-items: center; justify-content: center; font-weight: bold;">
-                戻る
-              </div>
-            </a>
-        </footer>
-    </div>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
-    <style>
-      body {
-        padding-top: 60px;
-        padding-button: 60px;
-      }
-    </style>
+    <!-- フッター -->
+    <footer class="bg-white mt-auto py-4 px-3 d-flex justify-content-end">
+        <a href="/admin">
+          <div style="position: fixed; bottom: 20px; right: 20px; background-color: gold; border-radius: 50%; width: 60px; height: 60px; display: flex; align-items: center; justify-content: center; font-weight: bold;">
+            戻る 
+          </div>
+        </a>
+    </footer>
+</div>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
