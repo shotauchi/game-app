@@ -43,7 +43,7 @@
 </div>
 <div class="d-flex justify-content-center align-items-center vh-100">
     <div class="d-flex flex-column gap-3 text-center">
-     <span class="material-icons">account_circle</span>   
+     <span class="material-symbols-outlined fs-1">star_rate_half</span>
          <a href="{{ route('games.create') }}" class="btn btn-primary">
         新しいゲームを作成
         </a>

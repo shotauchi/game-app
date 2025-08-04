@@ -17,10 +17,7 @@
     <script src="{{ secure_asset('js/app.js') }}" defer></script>
     <link href="{{ secure_asset('css/app.css') }}" rel="stylesheet">
         <!-- Google font Icon -->
-    <link
-    	href="https://fonts.googleapis.com/icon?family=Material+Icons"
-    	rel="stylesheet"
-    />
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet" />
     <!--一旦cdnでブートストラップを読み込む-->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
     <style>

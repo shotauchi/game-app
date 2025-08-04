@@ -11,7 +11,7 @@
     
 </style>
 
-<div class="container card py-5 px-3 mt-5">
+<div class="container card py-5 shadow-lg px-3 mt-5">
     <h2 style="color: #ff8c00;">コンソールの新規作成</h2> <!-- 濃いオレンジ -->
 
     @if(session('success'))
@@ -48,7 +48,7 @@
             @enderror
         </div>
 
-        <button type="submit" class="btn btn-primary">Submit</button>
+        <button type="submit" class="btn btn-primary rounded-pill">Submit</button>
     </form>
 </div>
 <!-- ① 新規作成フォームの後に追加 -->
