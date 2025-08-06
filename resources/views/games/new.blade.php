@@ -37,15 +37,19 @@
             <div class="text-danger">{{ $message }}</div>
         @enderror
 
-        <div class="mb-3">
-            <label for="image" class="form-label" style="color: #ff8c00;">image</label> <!-- 濃いオレンジ -->
-            <div class="col-3">
-                <input type="text" name="image" id="image" class="form-control @error('image') is-invalid @enderror" value="{{ old('image') }}">
+        
+            <!-- 画像ファイル選択欄 -->
+            <div class="mb-3">
+                <label for="image" class="form-label" style="color: #ff8c00;">image</label>
+                <div class="col-3">
+                    <input type="file" name="image" id="image" class="form-control @error('image') is-invalid @enderror">
+                </div>
+                @error('image')
+                    <div class="invalid-feedback">{{ $message }}</div>
+                @enderror
             </div>
-            @error('image')
-                <div class="invalid-feedback">{{ $message }}</div>
-            @enderror
-        </div>
+        
+            <!-- 他の入力欄（site, URL, introductionなど） -->
 
         
         <div class="mb-3">

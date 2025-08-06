@@ -43,12 +43,29 @@ class GameController extends Controller
     public function store(Request $request)
     {
     
-        $game = new Game;
-        $form = $request->all();
-        //dd($form);
-        $game->fill($form);
-        $game->save();
-        return redirect()->route('games.create')->with('success', 'Game created successfully!');
+        // バリデーション（適切な条件に調整可）
+    $request->validate([
+        'performance_id' => 'required|exists:performances,id',
+        'console_id' => 'required|exists:consoles,id',
+        'image' => 'required|image|mimes:jpeg,png,jpg,gif|max:2048',
+        'site' => 'required|string|max:255',
+        'url' => 'required|url',
+        'introduction' => 'required|string'
+    ]);
+
+    $form = $request->all();
+
+    // 画像ファイルの保存処理
+    if ($request->hasFile('image')) {
+        $path = $request->file('image')->store('images', 'public'); // storage/app/public/images に保存
+        $form['image'] = $path; // DBには images/ファイル名 が入る
+    }
+
+    $game = new Game();
+    $game->fill($form);
+    $game->save();
+
+    return redirect()->route('games.create')->with('success', 'Game created successfully!');
     }
 
     /**
