@@ -1,6 +1,16 @@
 @extends('layouts.app')
 
 @section('content')
+
+<style>
+        
+        body {
+        background-color: #75FF75; /* 背景色：薄い青 */
+        color: #7192ff;           /* 文字色：濃いグレー */
+    }
+    
+</style>
+
 <!-- サイト名 -->
         <div class="text-center my-4">
             <h1>サイト名</h1>
@@ -58,10 +68,10 @@
                             <li class="list-group-item bg-primary text-white">
                                 <a href="{{ route('games.index') }}" class="text-white text-decoration-none">ゲーム一覧ページ</a>
                             </li>
-                            <li class="list-group-item bg-success text-white">
+                            <li class="list-group-item bg-warning text-white">
                                 <a href="{{ route('consoles.index') }}" class="text-white text-decoration-none">コンソール一覧ページ</a>
                             </li>
-                            <li class="list-group-item bg-secondary text-white">
+                            <li class="list-group-item bg-success text-white">
                                 <a href="{{ route('performances.index') }}" class="text-white text-decoration-none">パフォーマンス一覧ページ</a>
                             </li>
                           </ul>

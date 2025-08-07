@@ -5,7 +5,8 @@
 <style>
         
         body {
-        background-color: #ffe88b; /* 背景色：薄い青色
+        background-color: #ffe88b;
+        color: #ff9b00;
     
     }
     
