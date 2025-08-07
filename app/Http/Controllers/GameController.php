@@ -31,6 +31,7 @@ class GameController extends Controller
     public function create()
     {
         $performances = Performance::all();
+        
         return view('games.new', compact('performances'));
     }
 
@@ -42,17 +43,17 @@ class GameController extends Controller
      */
     public function store(Request $request)
     {
-    
+        //dd($request);
         // バリデーション（適切な条件に調整可）
     $request->validate([
         'performance_id' => 'required|exists:performances,id',
-        'console_id' => 'required|exists:consoles,id',
         'image' => 'required|image|mimes:jpeg,png,jpg,gif|max:2048',
         'site' => 'required|string|max:255',
-        'url' => 'required|url',
+        'URL' => 'required|string|max:255',
         'introduction' => 'required|string'
     ]);
 
+    dd($request);
     $form = $request->all();
 
     // 画像ファイルの保存処理
