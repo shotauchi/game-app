@@ -39,18 +39,18 @@
         <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar">
           <span class="navbar-toggler-icon"></span>
         </button>
-        <div class="offcanvas offcanvas-end bg-primary" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
+        <div class="offcanvas offcanvas-end bg-warning" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
           <div class="offcanvas-header">
-            <h5 class="offcanvas-title" id="offcanvasNavbarLabel">ユーザー</h5>
+            <h5 class="offcanvas-title" id="offcanvasNavbarLabel"><span class="material-symbols-outlined fs-5">account_box</span>ユーザー</h5>
             <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
           </div>
           <div class="offcanvas-body">
             <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
-              <li class="nav-item bg-success">
-                <a class="nav-link active" aria-current="page" href="#">Home</a>
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="#"><span class="material-symbols-outlined fs-6">home</span>Home</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="#">Link</a>
+                <a class="nav-link" href="#"><span class="material-symbols-outlined fs-6">link</span>Link</a>
               </li>
               <li class="nav-item dropdown">
                 <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
@@ -83,7 +83,7 @@
     <footer class="bg-white mt-auto py-4 px-3 d-flex justify-content-end">
         <a href="/admin">
           <div style="position: fixed; bottom: 20px; right: 20px; background-color: gold; border-radius: 50%; width: 60px; height: 60px; display: flex; align-items: center; justify-content: center; font-weight: bold;">
-            戻る 
+            <span class="material-symbols-outlined fs-6">subdirectory_arrow_left</span>戻る 
           </div>
         </a>
     </footer>
