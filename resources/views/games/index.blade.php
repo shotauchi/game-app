@@ -23,12 +23,12 @@
         <thead>
           <tr>
             <th scope="col">#</th>
-            <th scope="col">image</th>
-            <th scope="col">site</th>
-            <th scope="col">introduction</th>
-            <th scope="col">URL</th>
-            <th scope="col">delete</th>
-            <th scope="col">edit</th>
+            <th scope="col"><span class="material-symbols-outlined fs-6">imagesmode</span>image</th>
+            <th scope="col"><span class="material-symbols-outlined fs-6">account_tree</span>site</th>
+            <th scope="col"><span class="material-symbols-outlined fs-6">page_footer</span>introduction</th>
+            <th scope="col"><span class="material-symbols-outlined fs-6">qr_code_scanner</span>URL</th>
+            <th scope="col"><span class="material-symbols-outlined fs-6">delete</span>delete</th>
+            <th scope="col"><span class="material-symbols-outlined fs-6">contract_edit</span>edit</th>
           </tr>
         </thead>
         <tbody>

@@ -22,12 +22,11 @@
   <thead>
     <tr>
       <th scope="col">#</th>
-      <th scope="col">introduction</th>
-      <th scope="col">Manufacturer</th>
-      <th scope="col">use</th>
-      <th scope="col">delete</th>
-      <th scope="col">edit</th>
-      
+      <th scope="col"><span class="material-symbols-outlined fs-6">computer</span>introduction</th>
+      <th scope="col"><span class="material-symbols-outlined fs-6">headset_mic</span>Manufacturer</th>
+      <th scope="col"><span class="material-symbols-outlined fs-6">mouse</span>use</th>
+      <th scope="col"><span class="material-symbols-outlined fs-6">delete</span>delete</th>
+      <th scope="col"><span class="material-symbols-outlined fs-6">contract_edit</span>edit</th>
     </tr>
   </thead>
   <tbody>

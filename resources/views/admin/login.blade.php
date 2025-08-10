@@ -14,7 +14,7 @@
 <div class="container" style="max-width: 400px;">
         <div class="card shadow">
             <div class="card-body">
-                <h1 class="card-title text-center mb-4">管理者ログイン</h1>
+                <h1 class="card-title text-center mb-4"><span class="material-symbols-outlined fs-5">key</span>管理者ログイン</h1>
 
                 @if ($errors->any())
                     <div class="alert alert-danger">

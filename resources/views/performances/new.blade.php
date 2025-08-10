@@ -38,7 +38,7 @@
         @enderror
 
         <div class="mb-3">
-            <label for="GPU" class="form-label" style="color: #ff8c00;">GPU</label> <!-- 濃いオレンジ -->
+            <label for="GPU" class="form-label" style="color: #ff8c00;"><span class="material-symbols-outlined fs-6">developer_board</span>GPU</label> <!-- 濃いオレンジ -->
             <div class="col-3">
                 <input type="text" name="GPU" id="GPU" class="form-control @error('GPU') is-invalid @enderror" value="{{ old('GPU') }}">
             </div>
@@ -48,7 +48,7 @@
         </div>
 
         <div class="mb-3">
-            <label for="CPU" class="form-label" style="color: #b8860b;">CPU</label> <!-- 濃い黄色 -->
+            <label for="CPU" class="form-label" style="color: #b8860b;"><span class="material-symbols-outlined fs-6">memory</span>CPU</label> <!-- 濃い黄色 -->
             <div class="col-3">
                 <input type="text" name="CPU" id="CPU" class="form-control @error('CPU') is-invalid @enderror" value="{{ old('CPU') }}">
             </div>
@@ -63,7 +63,7 @@
     <!-- ① 新規作成フォームの後に追加 -->
     <div class="text-end mt-3 me-3">
         <a href="{{ route('performances.index') }}" class="btn btn-outline-success">
-            パフォーマンス一覧画面へ
+            <span class="material-symbols-outlined fs-6">select_all</span>パフォーマンス一覧画面へ
         </a>
     </div>
         
