@@ -53,12 +53,12 @@ class GameController extends Controller
         'introduction' => 'required|string'
     ]);
 
-    dd($request);
+    //dd($request);
     $form = $request->all();
 
     // 画像ファイルの保存処理
     if ($request->hasFile('image')) {
-        $path = $request->file('image')->store('images', 'public'); // storage/app/public/images に保存
+        $path = $request->file('image')->store('images', 'public'); // app/public/storage/images に保存
         $form['image'] = $path; // DBには images/ファイル名 が入る
     }
 
