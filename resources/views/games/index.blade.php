@@ -35,7 +35,16 @@
           @forelse ($games as $game)
           <tr>
             <th scope="row"><span style="color: green;">{{ $loop->iteration }}</th>
-            <td><span style="color: blue;">{{ $game->image }}</span></td>
+            <td>
+                @if ($game->image)
+                    <img src="{{ asset('storage/' . $game->image) }}" 
+                         alt="Game Image" 
+                         width="100">
+                @else
+                    <span>画像なし</span>
+                @endif
+            </td>
+
             <td><span style="color: orange;">{{ $game->site }}</span></td>
             <td><span style="color: purple;">{{ $game->introduction }}</span></td>
             <td><span style="color: red;">{{ $game->URL }}</span></td>
@@ -62,6 +71,5 @@
     </div>
   </div>
 </div>
-        
         
 @endsection
