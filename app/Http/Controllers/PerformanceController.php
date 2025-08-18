@@ -40,12 +40,18 @@ class PerformanceController extends Controller
      */
     public function store(Request $request)
     {
+        $validated = $request->validate([
+        'performance_id' => 'required|exists:performances,id',
+        'GPU' => 'required|string|max:255',
+        'CPU' => 'required|string|max:255',
+    ]);
+        
         //dd($request->all());
         $performance = new Performance;
         $form = $request->all();
         $performance->fill($form);
         $performance->save();
-        return redirect()->route('admin.performances.create')->with('success', 'Performance created successfully!');
+        return redirect()->route('performances.create')->with('success', 'Performance created successfully!');
     }
 
     /**

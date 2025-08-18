@@ -62,8 +62,10 @@
           @empty
           <tr>
             <th scope="row">-</th>
-            <td>ゲームがありません。</td>
-            <td>ゲームがありません。</td>
+            <td>ゲーム画像がありません。</td>
+            <td>ゲームサイトがありません。</td>
+            <td>ゲーム紹介がありません。</td>
+            <td>ゲームURLがありません。</td>
           </tr>
           @endforelse
         </tbody>

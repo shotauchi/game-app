@@ -18,7 +18,7 @@
         <div class="alert alert-success">{{ session('success') }}</div>
     @endif
     
-    <form  method="POST">
+    <form method="POST" action="{{ route('performances.store') }}">
         @csrf
 
         @foreach($consoles as $console)

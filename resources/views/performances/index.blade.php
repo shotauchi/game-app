@@ -47,8 +47,8 @@
           @empty
           <tr>
             <th scope="row">-</th>
-            <td>パフォーマンスがありません。</td>
-            <td>パフォーマンスがありません。</td>
+            <td>GPUがありません。</td>
+            <td>CPUがありません。</td>
           </tr>
           @endforelse
         </tbody>

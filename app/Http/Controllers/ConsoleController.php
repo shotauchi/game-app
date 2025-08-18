@@ -44,7 +44,7 @@ class ConsoleController extends Controller
         $form = $request->all();
         $console->fill($form);
         $console->save();
-        return redirect()->route('admin.consoles.create')->with('success', 'Console created successfully!');
+        return redirect()->route('consoles.create')->with('success','Console created successfully!');
     }
 
     /**
