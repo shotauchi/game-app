@@ -8,6 +8,8 @@ use App\Models\Game;
 
 use App\Models\Performance;
 
+use Illuminate\Support\Facades\Storage;
+
 class GameController extends Controller
 {
     /**
@@ -128,9 +130,17 @@ class GameController extends Controller
     public function destroy($id)
     {
         $game = Game::findOrFail($id); // IDに該当するゲーム情報を取得
+        
+        // 画像が存在していたらストレージから削除
+    if ($game->image && Storage::disk('public')->exists($game->image)) {
+        Storage::disk('public')->delete($game->image);
+    }
+    
     $game->delete();               // データベースから削除
 
     return redirect()->route('games.index')->with('success', 'ゲームを削除しました');
+    
+    
     }
     
     
