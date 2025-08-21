@@ -30,9 +30,9 @@
                         </div>
                         <div class="card-body">
                             <ul class="list-group">
-                                <li class="list-group-item list-group-item-danger">フィルターで抽出したゲーム1</li>
-                                <li class="list-group-item list-group-item-danger">フィルターで抽出したゲーム2</li>
-                                <li class="list-group-item list-group-item-danger">フィルターで抽出したゲーム3</li>
+                                <li class="list-group-item list-group-item-danger">MMO</li>
+                                <li class="list-group-item list-group-item-danger">FPS</li>
+                                <li class="list-group-item list-group-item-danger">RPG</li>
                             </ul>
                         </div>
                     </div>
@@ -48,11 +48,18 @@
                               <button class="btn btn-warning" type="submit">Search</button>
                             </form>
                         </div>
+                        <!--<div class="card-body">-->
+                        <!--    <ul class="list-group">-->
+                        <!--        <li class="list-group-item list-group-item-info">Apex Legends</li>-->
+                        <!--        <li class="list-group-item list-group-item-info">VALORANT</li>-->
+                        <!--        <li class="list-group-item list-group-item-info">FORTNITE</li>-->
+                        <!--    </ul>-->
+                        <!--</div>-->
                         <div class="card-body">
                             <ul class="list-group">
-                                <li class="list-group-item list-group-item-info">タイトル検索でヒットしたゲーム1</li>
-                                <li class="list-group-item list-group-item-info">タイトル検索でヒットしたゲーム2</li>
-                                <li class="list-group-item list-group-item-info">タイトル検索でヒットしたゲーム3</li>
+                                @foreach($games as $game)
+                                    <li class="list-group-item list-group-item-info">{{ $game->site }}</li>
+                                @endforeach
                             </ul>
                         </div>
                     </div>

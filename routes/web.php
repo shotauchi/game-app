@@ -18,9 +18,7 @@ use Illuminate\Http\Request;
 |
 */
 
-Route::get('/', function () {
-    return view('home');
-});
+Route::get('/', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
 Route::get('/admin/login', function () {
     return view('admin.login');
