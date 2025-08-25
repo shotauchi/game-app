@@ -5,6 +5,7 @@ use App\Http\Controllers\GameController;
 use App\Http\Controllers\ConsoleController;
 use App\Http\Controllers\PerformanceController;
 use App\Http\Controllers\SearchController;
+use App\Http\Controllers\HomeController;
 use Illuminate\Http\Request;
 
 /*
@@ -18,7 +19,7 @@ use Illuminate\Http\Request;
 |
 */
 
-Route::get('/', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+Route::get('/', [HomeController::class, 'index'])->name('home');
 
 Route::get('/admin/login', function () {
     return view('admin.login');
@@ -107,6 +108,6 @@ Route::get('/searchs', [SearchController::class, 'index'])->name('searchs.index'
 
 
 
-Auth::routes();
+//Auth::routes();
 
 //Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
