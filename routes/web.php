@@ -72,6 +72,7 @@ Route::middleware(['admin'])->group(function () {
     
     Route::put('/performances/{id}', [PerformanceController::class, 'update'])->name('performances.update');
 
+    Route::get('/games/genre/{genre}', [GameController::class, 'genre'])->name('games.genre');
     
     Route::get('/games/create', [GameController::class, 'create'])->name('games.create');
     

@@ -30,9 +30,9 @@
                         </div>
                         <div class="card-body">
                             <ul class="list-group">
-                                <li class="list-group-item list-group-item-danger">MMO</li>
-                                <li class="list-group-item list-group-item-danger">FPS</li>
-                                <li class="list-group-item list-group-item-danger">RPG</li>
+                                @foreach($games as $game)
+                                    <li class="list-group-item list-group-item-info">{{ $game->introduction }}</li>
+                                @endforeach
                             </ul>
                         </div>
                     </div>

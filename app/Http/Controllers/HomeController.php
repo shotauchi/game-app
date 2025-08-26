@@ -28,7 +28,10 @@ class HomeController extends Controller
         // DBからゲームデータを全件取得
         $games = Game::all();
 
-        // view に渡す
+        // gamesテーブルのgenreカラムからユニークなジャンル一覧を取得
+
         return view('home', compact('games'));
     }
+    
+
 }
