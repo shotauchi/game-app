@@ -22,8 +22,8 @@
         <thead>
           <tr>
             <th scope="col">#</th>
-            <th scope="col"><span class="material-symbols-outlined fs-6">developer_board</span>GPU</th>
-            <th scope="col"><span class="material-symbols-outlined fs-6">memory</span>CPU</th>
+            <th scope="col"><span class="material-symbols-outlined fs-6">developer_board</span>CPU</th>
+            <th scope="col"><span class="material-symbols-outlined fs-6">memory</span>GPU</th>
             <th scope="col"><span class="material-symbols-outlined fs-6">delete</span>delete</th>
             <th scope="col"><span class="material-symbols-outlined fs-6">contract_edit</span>edit</th>
           </tr>

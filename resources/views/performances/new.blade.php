@@ -38,21 +38,21 @@
         @enderror
 
         <div class="mb-3">
-            <label for="GPU" class="form-label" style="color: #ff8c00;"><span class="material-symbols-outlined fs-6">developer_board</span>GPU</label> <!-- 濃いオレンジ -->
+            <label for="CPU" class="form-label" style="color: #ff8c00;"><span class="material-symbols-outlined fs-6">developer_board</span>CPU</label> <!-- 濃いオレンジ -->
             <div class="col-3">
-                <input type="text" name="GPU" id="GPU" class="form-control @error('GPU') is-invalid @enderror" value="{{ old('GPU') }}">
+                <input type="text" name="CPU" id="CPU" class="form-control @error('CPU') is-invalid @enderror" value="{{ old('CPU') }}">
             </div>
-            @error('GPU')
+            @error('CPU')
                 <div class="invalid-feedback">{{ $message }}</div>
             @enderror
         </div>
 
         <div class="mb-3">
-            <label for="CPU" class="form-label" style="color: #b8860b;"><span class="material-symbols-outlined fs-6">memory</span>CPU</label> <!-- 濃い黄色 -->
+            <label for="GPU" class="form-label" style="color: #b8860b;"><span class="material-symbols-outlined fs-6">memory</span>GPU</label> <!-- 濃い黄色 -->
             <div class="col-3">
-                <input type="text" name="CPU" id="CPU" class="form-control @error('CPU') is-invalid @enderror" value="{{ old('CPU') }}">
+                <input type="text" name="GPU" id="GPU" class="form-control @error('GPU') is-invalid @enderror" value="{{ old('GPU') }}">
             </div>
-            @error('CPU')
+            @error('GPU')
                 <div class="invalid-feedback">{{ $message }}</div>
             @enderror
         </div>
