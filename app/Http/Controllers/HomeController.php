@@ -26,9 +26,10 @@ class HomeController extends Controller
     public function index()
     {
         // DBからゲームデータを全件取得
-        $games = Game::all();
+        //$games = Game::all();
 
-        // gamesテーブルのgenreカラムからユニークなジャンル一覧を取得
+        // ジャンル一覧を重複なしで取得
+        $games = Game::select('introduction')->distinct()->get();
 
         return view('home', compact('games'));
     }
