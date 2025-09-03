@@ -31,7 +31,7 @@
                         <div class="card-body">
                             <ul class="list-group">
                                 @foreach($games2 as $game)
-                                    <li class="list-group-item list-group-item-info">{{ $game->introduction }}</li>
+                                    <li class="list-group-item list-group-item-info mb-2">{{ $game->introduction }}</li>
                                 @endforeach
                             </ul>
                         </div>
@@ -48,17 +48,14 @@
                               <button class="btn btn-warning" type="submit">Search</button>
                             </form>
                         </div>
-                        <!--<div class="card-body">-->
-                        <!--    <ul class="list-group">-->
-                        <!--        <li class="list-group-item list-group-item-info">Apex Legends</li>-->
-                        <!--        <li class="list-group-item list-group-item-info">VALORANT</li>-->
-                        <!--        <li class="list-group-item list-group-item-info">FORTNITE</li>-->
-                        <!--    </ul>-->
-                        <!--</div>-->
                         <div class="card-body">
-                            <ul class="list-group">
+                             <ul class="list-group">
                                 @foreach($games1 as $game)
-                                    <li class="list-group-item list-group-item-info">{{ $game->site }}</li>
+                                  {{-- 行全体がクリック可能になる書き方 --}}
+                                  <a href="{{ route('games.show', $game) }}"
+                                     class="list-group-item list-group-item-action list-group-item-info">
+                                    {{ $game->site }}
+                                  </a>
                                 @endforeach
                             </ul>
                         </div>

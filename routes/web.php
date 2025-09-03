@@ -89,6 +89,8 @@ Route::middleware(['admin'])->group(function () {
 
     // 管理者用ゲーム一覧ページ
     Route::get('/admin/games', [GameController::class, 'adminIndex'])->name('games.index');
+    
+    Route::resource('games', GameController::class)->only(['index', 'show']);
    
 });
 
