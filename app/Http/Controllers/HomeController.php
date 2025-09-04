@@ -6,6 +6,8 @@ use Illuminate\Http\Request;
 
 use App\Models\Game;
 
+use App\Models\Console;
+
 class HomeController extends Controller
 {
     /**
@@ -30,8 +32,13 @@ class HomeController extends Controller
 
         // ジャンル一覧を重複なしで取得ー＞ゲームジャンル検索用。
         $games2 = Game::select('introduction')->distinct()->get();
-
-        return view('home', compact('games1', 'games2'));//compact=games1,2,3,4の様に複数の指定ができる。
+        
+        //$consoles = Console::select('introduction')->distinct()->get();
+        // コンソール
+        $consoles = Console::select('id', 'introduction')->distinct()->get();
+    
+        // まとめてビューへ渡す
+        return view('home', compact('games1', 'games2', 'consoles'));
     }
     
 

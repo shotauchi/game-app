@@ -65,6 +65,30 @@
             <div class="row mb-4">
                 <div class="col-8 offset-2">
                     <div class="card">
+                        <div class="card-header bg-warning d-flex justify-content-between align-items-center">
+                            <span class="text-white fw-bold">コンソール検索</span>
+                            <form class="d-flex" role="search">
+                              <input class="form-control me-2" type="search" placeholder="検索" aria-label="Search">
+                              <button class="btn btn-warning" type="submit">Search</button>
+                            </form>
+                        </div>
+                        <div class="card-body">
+                          <div class="list-group">
+                            @foreach($consoles as $console)
+                              <a href="" 
+                                 class="list-group-item list-group-item-action list-group-item-info">
+                                {{ $console->introduction }}
+                              </a>
+                            @endforeach
+                          </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+            <div class="row mb-4">
+                <div class="col-8 offset-2">
+                    <div class="card">
                         <div class="card-body">
                           <h5 class="card-title text-center">サイト案内</h5>
                           <ul class="list-group list-group-numbered list-group-flush">
