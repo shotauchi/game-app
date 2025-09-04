@@ -8,6 +8,8 @@ use App\Models\Game;
 
 use App\Models\Console;
 
+use App\Models\Performance;
+
 class HomeController extends Controller
 {
     /**
@@ -33,12 +35,14 @@ class HomeController extends Controller
         // ジャンル一覧を重複なしで取得ー＞ゲームジャンル検索用。
         $games2 = Game::select('introduction')->distinct()->get();
         
-        //$consoles = Console::select('introduction')->distinct()->get();
         // コンソール
         $consoles = Console::select('id', 'introduction')->distinct()->get();
-    
+        
+        // パフォーマンス
+        $performances = Performance::select('id', 'CPU')->distinct()->get();
+        
         // まとめてビューへ渡す
-        return view('home', compact('games1', 'games2', 'consoles'));
+        return view('home', compact('games1','games2','consoles','performances'));
     }
     
 
