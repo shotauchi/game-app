@@ -20,6 +20,7 @@ use Illuminate\Http\Request;
 */
 
 Route::get('/', [HomeController::class, 'index'])->name('home');
+Route::get('/search', [HomeController::class, 'search'])->name('games.search');
 
 Route::get('/admin/login', function () {
     return view('admin.login');
