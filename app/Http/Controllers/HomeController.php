@@ -48,26 +48,30 @@ class HomeController extends Controller
     
         public function search(Request $request)
     {
-        $mode = $request->input('mode');   // select で選んだ項目
-        $keyword = $request->input('search'); // 入力したキーワード
-    
+        $mode = $request->input('mode', 'game_title'); // デフォルト target
+        $keyword = trim($request->input('search', ''));
+
         $query = Game::query();
-    
-        if ($mode === 'game_title') {
-            // タイトルで検索（site カラムをタイトルとしている前提）
-            $query->where('site', 'like', '%' . $keyword . '%');
-        } elseif ($mode === 'title') {
-            // ジャンルで検索（introduction カラムをジャンルとしている前提）
-            $query->where('introduction', 'like', '%' . $keyword . '%');
+
+        if ($keyword !== '') {
+            if ($mode === 'game_title') {
+                // site カラムをゲームタイトルとして検索（部分一致）
+                $query->where('site', 'like', '%' . $keyword . '%');
+            } elseif ($mode === 'genre' || $mode === 'title') {
+                // introduction カラムをジャンルとして検索（あなたの前提に合わせる）
+                $query->where('introduction', 'like', '%' . $keyword . '%');
+            }
+            // 必要なら orderBy を追加
+            //$games1 = $query->get();
+        } else {
+            // キーワードが空ならデフォルト表示（最新3件）
+            $games1 = Game::orderBy('created_at', 'desc')->take(3)->get();
         }
-    
-        $games1 = $query->get();
-    
-        // 他のデータも渡す
+
         $games2 = Game::select('introduction')->distinct()->get();
         $consoles = Console::select('id', 'introduction')->distinct()->get();
         $performances = Performance::select('id', 'CPU')->distinct()->get();
-    
+
         return view('home', compact('games1','games2','consoles','performances'));
     }
 

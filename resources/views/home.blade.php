@@ -44,13 +44,17 @@
                 <div class="card-header bg-primary d-flex justify-content-between align-items-center">
                     <span class="text-white fw-bold">ゲームタイトル検索</span>
                     <div class="form-floating me-3" style="min-width:180px;">
-                      <select class="form-select" id="searchMode" name="mode" form="unifiedSearchForm">
-                        <option value="game_title" selected>タイトル</option>
-                        <option value="title">ジャンル</option>
-                      </select>
                     </div>
                     <form class="d-flex" role="search">
-                        <input class="form-control me-2" type="search" placeholder="検索" aria-label="Search">
+                        <div class="form-floating me-3" style="min-width:180px;">
+                            <select class="form-select" id="searchMode" name="mode">
+                                <option value="game_title" {{ request('mode') === 'game_title' ? 'selected' : '' }}>タイトル</option>
+                                <option value="genre" {{ request('mode') === 'genre' ? 'selected' : '' }}>ジャンル</option>
+                            </select>
+                            <label for="searchMode">検索対象</label>
+                        </div>
+                        <!-- name="search" を追加。value に request() を入れて検索語を残す -->
+                        <input class="form-control me-2" type="search" name="search" value="{{ request('search') }}" placeholder="検索" aria-label="Search">
                         <button class="btn btn-warning" type="submit">Search</button>
                     </form>
                 </div>

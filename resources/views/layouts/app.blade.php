@@ -46,12 +46,14 @@
           </div>
           <div class="offcanvas-body">
             <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
-              <li class="nav-item">
-                <a class="nav-link active" aria-current="page" href="#"><span class="material-symbols-outlined fs-6">home</span>Home</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="#"><span class="material-symbols-outlined fs-6">link</span>Link</a>
-              </li>
+              {{-- ここで部分テンプレートを読み込む --}}
+              @include('partials.site-guide-navbar')
+              <!--<li class="nav-item">-->
+              <!--  <a class="nav-link active" aria-current="page" href="#"><span class="material-symbols-outlined fs-6">home</span>Home</a>-->
+              <!--</li>-->
+              <!--<li class="nav-item">-->
+              <!--  <a class="nav-link" href="#"><span class="material-symbols-outlined fs-6">link</span>Link</a>-->
+              <!--</li>-->
               <li class="nav-item dropdown">
                 <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                   Dropdown
