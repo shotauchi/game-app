@@ -23,7 +23,38 @@
     <style>
   body {
     padding-top: 60px;
-    padding-botton: 60px;
+    padding-bottom: 60px; /* 修正: bottom の綴り */
+  }
+
+  /* トグル（上の「Dropdown」テキスト）を紫に */
+  .navbar .nav-link.dropdown-toggle {
+    color: purple !important;
+  }
+
+  /* offcanvas（右側パネル）内のドロップダウンメニュー項目だけを紫に */
+  .offcanvas .dropdown-menu .dropdown-item {
+    color: purple !important;
+  }
+
+  /* hover / focus の色 */
+  .offcanvas .dropdown-menu .dropdown-item:hover,
+  .offcanvas .dropdown-menu .dropdown-item:focus {
+    color: #6F27F5 !important;
+    background-color: #f8f9fa; /* 必要なら有効化 */
+  }
+
+  /* active / :active の色 */
+  .offcanvas .dropdown-menu .dropdown-item.active,
+  .offcanvas .dropdown-menu .dropdown-item:active {
+    color: #6F27F5 !important;
+    background-color: #e9ecef;
+  }
+
+  /* 無効(disabled)項目の見た目 */
+  .offcanvas .dropdown-menu .dropdown-item.disabled,
+  .offcanvas .dropdown-menu .dropdown-item:disabled {
+    color: #adb5bd !important;
+    pointer-events: none;
   }
 </style>
 </head>
@@ -39,7 +70,7 @@
         <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar">
           <span class="navbar-toggler-icon"></span>
         </button>
-        <div class="offcanvas offcanvas-end bg-warning" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
+        <div class="offcanvas offcanvas-end bg-light" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
           <div class="offcanvas-header">
             <h5 class="offcanvas-title" id="offcanvasNavbarLabel"><span class="material-symbols-outlined fs-5">account_box</span>ユーザー</h5>
             <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
