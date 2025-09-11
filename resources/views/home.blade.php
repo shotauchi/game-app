@@ -45,7 +45,7 @@
                     <span class="text-white fw-bold">ゲームタイトル検索</span>
                     <div class="form-floating me-3" style="min-width:180px;">
                     </div>
-                    <form class="d-flex" role="search">
+                    <form class="d-flex" role="search" method="GET" action="{{ route('games.search') }}">
                         <div class="form-floating me-3" style="min-width:180px;">
                             <select class="form-select" id="searchMode" name="mode">
                                 <option value="game_title" {{ request('mode') === 'game_title' ? 'selected' : '' }}>タイトル</option>
@@ -53,7 +53,6 @@
                             </select>
                             <label for="searchMode">検索対象</label>
                         </div>
-                        <!-- name="search" を追加。value に request() を入れて検索語を残す -->
                         <input class="form-control me-2" type="search" name="search" value="{{ request('search') }}" placeholder="検索" aria-label="Search">
                         <button class="btn btn-warning" type="submit">Search</button>
                     </form>

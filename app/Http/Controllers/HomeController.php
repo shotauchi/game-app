@@ -46,33 +46,35 @@ class HomeController extends Controller
         return view('home', compact('games1','games2','consoles','performances'));
     }
     
-        public function search(Request $request)
+    public function search(Request $request)
     {
-        $mode = $request->input('mode', 'game_title'); // デフォルト target
-        $keyword = trim($request->input('search', ''));
+        $mode = $request->input('mode', 'game_title'); // デフォルトは game_title
+    $keyword = trim($request->input('search', ''));
 
-        $query = Game::query();
+    $query = Game::query();
 
-        if ($keyword !== '') {
-            if ($mode === 'game_title') {
-                // site カラムをゲームタイトルとして検索（部分一致）
-                $query->where('site', 'like', '%' . $keyword . '%');
-            } elseif ($mode === 'genre' || $mode === 'title') {
-                // introduction カラムをジャンルとして検索（あなたの前提に合わせる）
-                $query->where('introduction', 'like', '%' . $keyword . '%');
-            }
-            // 必要なら orderBy を追加
-            //$games1 = $query->get();
-        } else {
-            // キーワードが空ならデフォルト表示（最新3件）
-            $games1 = Game::orderBy('created_at', 'desc')->take(3)->get();
+    if ($keyword !== '') {
+        if ($mode === 'game_title') {
+            // site カラムをゲームタイトルとして検索（部分一致）
+            $query->where('site', 'like', '%' . $keyword . '%');
+        } elseif ($mode === 'genre' || $mode === 'title') {
+            // introduction カラムをジャンルとして検索
+            $query->where('introduction', 'like', '%' . $keyword . '%');
         }
 
-        $games2 = Game::select('introduction')->distinct()->get();
-        $consoles = Console::select('id', 'introduction')->distinct()->get();
-        $performances = Performance::select('id', 'CPU')->distinct()->get();
+        // 検索結果を取得
+        $games1 = $query->get();
+    } else {
+        // キーワードが空ならデフォルト表示（最新3件）
+        $games1 = Game::orderBy('created_at', 'desc')->take(3)->get();
+    }
 
-        return view('home', compact('games1','games2','consoles','performances'));
+    // 他のデータ
+    $games2 = Game::select('introduction')->distinct()->get();
+    $consoles = Console::select('id', 'introduction')->distinct()->get();
+    $performances = Performance::select('id', 'CPU')->distinct()->get();
+
+    return view('home', compact('games1','games2','consoles','performances'));
     }
 
 }
