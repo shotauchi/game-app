@@ -59,12 +59,17 @@
                 </div>
                 <div class="card-body">
                     <ul class="list-group">
-                        @foreach($games1 as $game)
+                        @forelse($games1 as $game)
                             <a href="{{ route('games.show', $game) }}"
                                class="list-group-item list-group-item-action list-group-item-info">
-                                {{ $game->site }}
+                                タイトル：{{ $game->site }}　
+                                ジャンル：{{ $game->introduction }}
                             </a>
-                        @endforeach
+                        @empty
+                            <li class="list-group-item list-group-item-danger">
+                                該当のタイトル、ジャンルがありません
+                            </li>
+                        @endforelse
                     </ul>
                 </div>
             </div>
