@@ -1,0 +1,22 @@
+/* public/css/game.css */
+body.game-layout {
+  background-color: #e0e7ff; /* 背景：薄い青 */
+  color: #7192ff;            /* 文字色：濃いグレー */
+}
+
+/* テーブルやカード内の文字を継承させる */
+body.game-layout .table,
+body.game-layout .card,
+body.game-layout .container {
+  color: inherit;
+}
+
+/* 任意：ボタンやリンクの見た目を整える（必要なら調整） */
+body.game-layout a { color: #6F27F5; text-decoration: none; }
+body.game-layout .btn-outline-secondary {
+  color: #7192ff;
+  border-color: #7192ff;
+}
+body.game-layout .btn-outline-secondary:hover {
+  background-color: rgba(113,146,255,0.08);
+}

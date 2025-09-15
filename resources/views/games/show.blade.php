@@ -1,6 +1,17 @@
 @extends('layouts.app')
 
 @section('content')
+
+<style>
+        
+        body {
+        background-color: #e0e7ff; /* 背景色：薄い青 */
+        color: #7192ff;           /* 文字色：濃いグレー */
+        
+    }
+    
+</style>
+
 <div class="container my-4">
   <div class="row">
     <div class="col-10 offset-1">

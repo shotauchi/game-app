@@ -1,6 +1,8 @@
 <!doctype html>
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
 <head>
+  @stack('styles')
+
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
@@ -58,7 +60,7 @@
   }
 </style>
 </head>
-<body class="d-flex flex-column justify-content-between min-vh-100">
+<body class="d-flex flex-column justify-content-between min-vh-100 @yield('body-class')">
     <div id="app">
     <nav class="navbar bg-body-tertiary fixed-top">
       <div class="container-fluid d-flex justify-content-between align-items-center">
