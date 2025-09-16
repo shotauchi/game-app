@@ -74,9 +74,12 @@
         </button>
         <div class="offcanvas offcanvas-end bg-light" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
           <div class="offcanvas-header">
-            <h5 class="offcanvas-title" id="offcanvasNavbarLabel"><span class="material-symbols-outlined fs-5">account_box</span>ユーザー</h5>
+            <h5 class="offcanvas-title" id="offcanvasNavbarLabel" style="color: #1e3a8a;">
+              <span class="material-symbols-outlined fs-5">account_box</span> メニュー覧
+            </h5>
             <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
           </div>
+
           <div class="offcanvas-body">
             <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
               {{-- ここで部分テンプレートを読み込む --}}
@@ -89,15 +92,15 @@
               <!--</li>-->
               <li class="nav-item dropdown">
                 <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                  Dropdown
+                  おすすめサイト一覧
                 </a>
                 <ul class="dropdown-menu">
-                  <li><a class="dropdown-item" href="#">Action</a></li>
-                  <li><a class="dropdown-item" href="#">Another action</a></li>
+                  <li><a class="dropdown-item" href="#">サイト1</a></li>
+                  <li><a class="dropdown-item" href="#">サイト2</a></li>
                   <li>
                     <hr class="dropdown-divider">
                   </li>
-                  <li><a class="dropdown-item" href="#">Something else here</a></li>
+                  <li><a class="dropdown-item" href="#">サイト3</a></li>
                 </ul>
               </li>
             </ul>

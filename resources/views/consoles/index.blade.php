@@ -22,6 +22,7 @@
   <thead>
     <tr>
       <th scope="col">#</th>
+      <th scope="col"><span class="material-symbols-outlined fs-6">cable</span>name</th>
       <th scope="col"><span class="material-symbols-outlined fs-6">computer</span>introduction</th>
       <th scope="col"><span class="material-symbols-outlined fs-6">headset_mic</span>Manufacturer</th>
       <th scope="col"><span class="material-symbols-outlined fs-6">mouse</span>use</th>
@@ -49,6 +50,7 @@
     @empty
     <tr>
       <th scope="row">-</th>                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            
+      <td>名前一覧がありません。</td>
       <td>キーボード、マウス、ヘッドセットがありません。</td>
       <td>メーカー名がありません。</td>
       <td>使用率の高い商品がありません。</td>
