@@ -15,9 +15,9 @@ return new class extends Migration
     {
         Schema::create('consoles', function (Blueprint $table) {
             $table->id();
-            $table->text('introduction'); 
-            $table->string('Manufacturer');
-            $table->string('use');
+            $table->text('introduction');//種類
+            $table->string('Manufacturer');//メーカー名
+            $table->string('use');//使用用途などを記載
             $table->timestamps();
         });
     }
