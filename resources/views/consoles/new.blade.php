@@ -22,6 +22,15 @@
         @csrf
 
         <div class="mb-3">
+            <label for="name" class="form-label" style="color: #b8860b;"><span class="material-symbols-outlined fs-6">cable</span>Name</label>
+            <div class="col-3">
+            <input type="text" name="name" id="name" class="form-control @error('name') is-invalid @enderror" value="{{ old('name') }}">
+            @error('name')
+                <div class="invalid-feedback">{{ $message }}</div>
+            @enderror
+        </div>
+        
+        <div class="mb-3">
             <label for="introduction" class="form-label" style="color: #800080;"><span class="material-symbols-outlined fs-6">computer</span>Introduction</label> <!-- 濃い紫 -->
             <div class="col-3">
             <textarea name="introduction" id="introduction" class="form-control @error('introduction') is-invalid @enderror">{{ old('introduction') }}</textarea>

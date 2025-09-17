@@ -10,6 +10,7 @@ class Console extends Model
     
     protected $fillable = [
         'use',
+        'name',
         'introduction',
         'Manufacturer',
     ];
