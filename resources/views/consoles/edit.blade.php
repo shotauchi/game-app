@@ -24,10 +24,11 @@
                         @method('PUT') <!-- PUTメソッドに変換（更新処理） -->
                 
                         <div class="mb-3">
-                            <label for="use" class="form-label">コンソール名</label>
-                            <input type="text" name="use" id="use" class="form-control" value="{{ old('use', $console->use) }}" required>
+                            <label for="name" class="form-label">コンソール名</label>
+                            <input type="text" name="name" id="name" class="form-control"
+                                   value="{{ old('name', $console->name) }}" required>
                         </div>
-                
+
                         <div class="mb-3">
                             <label for="introduction" class="form-label">紹介文</label>
                             <textarea name="introduction" id="introduction" class="form-control" rows="5" required>{{ old('introduction', $console->introduction) }}</textarea>
@@ -38,6 +39,13 @@
                         <input type="text" name="Manufacturer" id="Manufacturer" class="form-control"
                            value="{{ old('Manufacturer', $console->Manufacturer) }}" required>
                         </div>
+                        
+                        <div class="mb-3">
+                            <label for="use" class="form-label">使用用途</label>
+                            <input type="text" name="use" id="use" class="form-control"
+                                   value="{{ old('use', $console->use) }}" required>
+                        </div>
+                        
                         <button type="submit" class="btn btn-primary">更新する</button>
                     </form>
                </div>

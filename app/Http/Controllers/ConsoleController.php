@@ -87,6 +87,7 @@ class ConsoleController extends Controller
     $validated = $request->validate([
         'use' => 'required|string|max:255',
         'introduction' => 'required|string',
+        'name' => 'required|string',
         'Manufacturer' => 'required|string|max:255', 
     ]);
 

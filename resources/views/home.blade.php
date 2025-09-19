@@ -123,7 +123,6 @@
         <form class="d-flex" role="search" method="GET" action="{{ route('home') }}">
           <div class="form-floating me-2" style="min-width:180px;">
             <select class="form-select" id="performance_mode" name="performance_mode">
-              <option value="all" {{ request('performance_mode') === 'all' ? 'selected' : '' }}>全て</option>
               <option value="CPU" {{ request('performance_mode') === 'CPU' ? 'selected' : '' }}>CPU</option>
               <option value="GPU" {{ request('performance_mode') === 'GPU' ? 'selected' : '' }}>GPU</option>
               <!-- 実際の DB カラムが違う場合はここを修正 -->

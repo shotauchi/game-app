@@ -22,9 +22,9 @@
   <thead>
     <tr>
       <th scope="col">#</th>
-      <th scope="col"><span class="material-symbols-outlined fs-6">cable</span>name</th>
       <th scope="col"><span class="material-symbols-outlined fs-6">computer</span>introduction</th>
       <th scope="col"><span class="material-symbols-outlined fs-6">headset_mic</span>Manufacturer</th>
+      <th scope="col"><span class="material-symbols-outlined fs-6">cable</span>name</th>
       <th scope="col"><span class="material-symbols-outlined fs-6">mouse</span>use</th>
       <th scope="col"><span class="material-symbols-outlined fs-6">delete</span>delete</th>
       <th scope="col"><span class="material-symbols-outlined fs-6">contract_edit</span>edit</th>
@@ -36,6 +36,7 @@
       <td scope="row"><span style="color: green;">{{ $loop->iteration }}</td>
       <td><span style="color: red;">{{ $console->introduction }}</span></td>
       <td><span style="color: blue;">{{ $console->Manufacturer }}</span></td>
+      <td><span style="color: red;">{{ $console->name }}</span></td>
       <td><span style="color: purple;">{{ $console->use }}</span></td>
       <td><form action="{{ route('consoles.destroy', $console->id) }}" method="POST" onsubmit="return confirm('本当に削除してよろしいですか？');">
           @csrf
