@@ -49,7 +49,7 @@
                         <div class="form-floating me-3" style="min-width:180px;">
                             <select class="form-select" id="searchMode" name="mode">
                                 <option value="game_title" {{ request('mode') === 'game_title' ? 'selected' : '' }}>タイトル</option>
-                                <option value="introduction" {{ request('mode') === 'genre' ? 'selected' : '' }}>ジャンル</option>
+                                <option value="introduction" {{ request('mode') === 'introduction' ? 'selected' : '' }}>ジャンル</option>
                             </select>
                             <label for="searchMode">検索対象</label>
                         </div>
@@ -86,7 +86,7 @@
         <form class="d-flex" role="search" method="GET" action="{{ route('home') }}">
           <div class="form-floating me-2" style="min-width:180px;">
             <select class="form-select" id="console_mode" name="console_mode">
-              <option value="introduction" {{ request('console_mode') === 'introduction' ? 'selected' : '' }}>名前</option>
+              <option value="name" {{ request('console_mode') === 'name' ? 'selected' : '' }}>名前</option>
               <option value="manufacturer" {{ request('console_mode') === 'manufacturer' ? 'selected' : '' }}>メーカー</option>
             </select>
             <label for="console_mode">検索対象</label>
@@ -101,7 +101,7 @@
         <div class="list-group">
           @forelse($consoles as $console)
             <a href="#" class="list-group-item list-group-item-action list-group-item-info">
-              {{ $console->introduction }}
+              {{ $console->name }}
             </a>
           @empty
             <div class="list-group-item list-group-item-danger">該当のコンソールがありません</div>

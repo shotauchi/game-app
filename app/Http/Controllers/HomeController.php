@@ -29,54 +29,6 @@ class HomeController extends Controller
      */
     public function index(Request $request)
     {
-        
-    //     // ゲームの最新3件
-    // $games1 = Game::orderBy('created_at', 'desc')->take(3)->get();
-
-    // // ゲームジャンル一覧
-    // $games2 = Game::select('introduction')->distinct()->get();
-
-    // // --- コンソール検索 ---
-    // $consolesQuery = Console::query();
-
-    // // ホワイトリスト：フォーム側の mode 値 => 実際の DB カラム名
-    // $modeMap = [
-    //     'introduction' => 'introduction',
-    //     'manufacturer' => 'Manufacturer', // DB のカラム名が大文字Mならそのまま合わせる
-    //     'use' => 'use',
-    // ];
-
-    // $consoleSearch = trim((string) $request->input('console_search', ''));
-
-    // if ($consoleSearch !== '') {
-    //     // 半角／全角スペース等を簡単に正規化（任意）
-    //     $term = mb_convert_kana($consoleSearch, 's');
-    //     $like = '%' . $term . '%';
-    //     $mode = $request->input('console_mode', 'all');
-
-    //     if ($mode === 'all') {
-    //         // 全列を横断検索
-    //         $consolesQuery->where(function ($q) use ($like, $modeMap) {
-    //             // modeMap の値を直接書いているので安全
-    //             $q->where('introduction', 'like', $like)
-    //               ->orWhere('Manufacturer', 'like', $like)
-    //               ->orWhere('use', 'like', $like);
-    //         });
-    //     } elseif (isset($modeMap[$mode])) {
-    //         // 指定列だけ検索（$mode はホワイトリストで検証済み）
-    //         $col = $modeMap[$mode];
-    //         $consolesQuery->where($col, 'like', $like);
-    //     }
-    // }
-
-    // // 結果取得（件数が多ければ paginate を検討）
-    // $consoles = $consolesQuery->get();
-
-    // // パフォーマンス等（既存のまま）
-    // $performances = Performance::select('id', 'CPU')->distinct()->get();
-
-    // // ビューに渡す
-    // return view('home', compact('games1', 'games2', 'consoles', 'performances'));
     
     // ゲームの最新3件
     $games1 = Game::orderBy('created_at', 'desc')->take(3)->get();
@@ -90,6 +42,7 @@ class HomeController extends Controller
         'introduction' => 'introduction',
         'manufacturer' => 'Manufacturer', // DBのカラム名に合わせる
         'use' => 'use',
+        'name' => 'name',
     ];
     $consoleSearch = trim((string) $request->input('console_search', ''));
     if ($consoleSearch !== '') {
@@ -100,7 +53,8 @@ class HomeController extends Controller
             $consolesQuery->where(function($q) use($like) {
                 $q->where('introduction','like',$like)
                   ->orWhere('Manufacturer','like',$like)
-                  ->orWhere('use','like',$like);
+                  ->orWhere('use','like',$like)
+                  ->orWhere('name','like',$like);
             });
         } elseif (isset($modeMapConsole[$mode])) {
             $consolesQuery->where($modeMapConsole[$mode], 'like', $like);
@@ -172,7 +126,10 @@ class HomeController extends Controller
 
     // 他のデータ
     $games2 = Game::select('introduction')->distinct()->get();
-    $consoles = Console::select('id', 'introduction')->distinct()->get();
+    //$consoles = Console::select('id', 'introduction')->distinct()->get();
+    // 必要なカラムを全部渡す（簡単）
+    $consoles = Console::select('id', 'introduction', 'name', 'Manufacturer')->distinct()->get();
+
     $performances = Performance::select('id', 'CPU')->distinct()->get();
 
     return view('home', compact('games1','games2','consoles','performances'));
