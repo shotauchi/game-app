@@ -62,10 +62,11 @@ class PerformanceController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show(Performance $performance)
     {
-        //
+    return view('performances.show', compact('performances'));
     }
+
 
     /**
      * Show the form for editing the specified resource.

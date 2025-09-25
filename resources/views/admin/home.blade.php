@@ -41,24 +41,20 @@
     <a href="{{ route('performances.index') }}" class="btn btn-sm btn-outline-success"><span class="material-symbols-outlined fs-6">select_all</span>パフォーマンス一覧</a>
     </div>
 </div>
-<div class="d-flex justify-content-center align-items-center vh-100">
+<div class="d-flex justify-content-center align-items-center">
     <div class="d-flex flex-column gap-3 text-center">
-     <span class="material-symbols-outlined fs-1">star_rate_half</span>
         <a href="{{ route('games.create') }}" class="btn btn-primary">
         <span class="material-symbols-outlined fs-5">stadia_controller</span>
         新しいゲームを作成
         </a>
-        
         <a href="{{ route('consoles.create') }}" class="btn btn-warning">
         <span class="material-symbols-outlined fs-5">keyboard</span>
         新しいコンソールを作成
         </a>
-        
         <a href="{{ route('performances.create') }}" class="btn btn-success">
         <span class="material-symbols-outlined fs-5">select_all</span>
         新しいパフォーマンスを作成
         </a>
-        
         <form method="POST" action="{{ route('admin.logout') }}" class="d-inline">
             @csrf
             <button type="submit" class="btn btn-outline-danger">
@@ -67,5 +63,4 @@
         </form>
     </div>    
 </div>    
-        
 @endsection

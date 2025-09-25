@@ -105,7 +105,12 @@ Route::get('/games', [GameController::class, 'index'])->name('games.index');
 
 Route::get('/consoles', [ConsoleController::class, 'index'])->name('consoles.index');
 
+// コンソール詳細ページ
+Route::get('/consoles/{console}', [ConsoleController::class, 'show'])->name('consoles.show');
+
 Route::get('/performances', [PerformanceController::class, 'index'])->name('performances.index');
+
+Route::get('/performances/{performance}', [PerformanceController::class, 'show'])->name('performances.show');
 
 Route::get('/searchs', [SearchController::class, 'index'])->name('searchs.index');
 

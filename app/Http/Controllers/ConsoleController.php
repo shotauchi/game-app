@@ -53,9 +53,9 @@ class ConsoleController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show(Console $console)
     {
-        //
+    return view('consoles.show', compact('console'));
     }
 
     /**

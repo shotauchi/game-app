@@ -100,7 +100,8 @@
       <div class="card-body">
         <div class="list-group">
           @forelse($consoles as $console)
-            <a href="#" class="list-group-item list-group-item-action list-group-item-info">
+            <a href="{{ route('consoles.show', $console) }}" 
+               class="list-group-item list-group-item-action list-group-item-info">
               {{ $console->name }}
             </a>
           @empty
@@ -138,8 +139,8 @@
       <div class="card-body">
         <div class="list-group">
           @forelse($performances as $performance)
-            <a href="#" class="list-group-item list-group-item-action list-group-item-info">
-              {{ $performance->CPU }} {{-- 必要に応じて他カラムも表示 --}}
+            <a href="{{ route('performances.show', $performance) }}" class="list-group-item list-group-item-action list-group-item-info">
+              {{ $performance->CPU }}
             </a>
           @empty
             <div class="list-group-item list-group-item-danger">該当のパフォーマンスがありません</div>
