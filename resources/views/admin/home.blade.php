@@ -2,65 +2,103 @@
 
 @section('content')
 
-<!-- スタイルの追加 -->
 <style>
-        
-        body {
-        background-color: #fffacd; /* 背景色：薄い黄色 */
-        color: #28a745;           /* 文字色：濃いグレー */
-    }
-        
-        
-        .logout-button {
-        background-color: white;
-        border: 2px solid red;
-        color: red;
-        padding: 8px 16px;
-        border-radius: 5px;
-        font-weight: bold;
-        transition: background-color 0.3s ease;
+    body {
+        background-color: #fffacd; /* 薄い黄色 */
+        color: #28a745;           /* テキスト全体 */
     }
 
-    .logout-button:hover {
-        background-color: red;
-        color: white;
+    /* コンテンツ全体の中央寄せ */
+    .admin-container {
+        max-width: 960px;
+        margin: 60px auto;
+        text-align: center;
     }
-        
+
+    .admin-container h1 {
+        margin-bottom: 30px;
+        font-weight: bold;
+    }
+
+    /* ボタングリッド */
+    .btn-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 20px 40px; /* 縦20px 横40px */
+        justify-items: center;
+        margin-bottom: 30px;
+    }
+
+    /* 各ボタンを大きめに */
+    .btn-grid a {
+        min-width: 220px;
+        padding: 12px 20px;
+        font-weight: 600;
+    }
+
+    /* ログアウトボタン */
+    .logout-btn {
+        min-width: 220px;
+    }
+
+    /* レスポンシブ */
+    @media (max-width: 768px) {
+        .btn-grid {
+            grid-template-columns: repeat(2, 1fr);
+        }
+    }
+    @media (max-width: 480px) {
+        .btn-grid {
+            grid-template-columns: 1fr;
+        }
+    }
 </style>
 
+<div class="admin-container">
+    <h1>管理者画面</h1>
 
-<!-- サイト名 -->
-<div class="text-center my-4">
- <h1>管理者画面</h1>
+    <!-- ボタングリッド -->
+<div class="btn-grid">
+    <a href="{{ route('games.index') }}" 
+       class="btn btn-primary btn-lg w-100 d-flex align-items-center justify-content-center">
+        <span class="material-symbols-outlined me-2">stadia_controller</span>
+        ゲームの一覧
+    </a>
+    <a href="{{ route('consoles.index') }}" 
+       class="btn btn-warning btn-lg w-100 d-flex align-items-center justify-content-center">
+        <span class="material-symbols-outlined me-2">keyboard</span>
+        コンソールの一覧
+    </a>
+    <a href="{{ route('performances.index') }}" 
+       class="btn btn-success btn-lg w-100 d-flex align-items-center justify-content-center">
+        <span class="material-symbols-outlined me-2">select_all</span>
+        パフォーマンスの一覧
+    </a>
+    <a href="{{ route('games.create') }}" 
+       class="btn btn-primary btn-lg w-100 d-flex align-items-center justify-content-center">
+        <span class="material-symbols-outlined me-2">add_circle</span>
+        ゲームの新規作成
+    </a>
+    <a href="{{ route('consoles.create') }}" 
+       class="btn btn-warning btn-lg w-100 d-flex align-items-center justify-content-center">
+        <span class="material-symbols-outlined me-2">add_circle</span>
+        コンソールの新規作成
+    </a>
+    <a href="{{ route('performances.create') }}" 
+       class="btn btn-success btn-lg w-100 d-flex align-items-center justify-content-center">
+        <span class="material-symbols-outlined me-2">add_circle</span>
+        パフォーマンスの新規作成
+    </a>
+
+    <!-- ログアウトボタンも同じ枠に配置 -->
+    <form method="POST" action="{{ route('admin.logout') }}" class="w-100">
+        @csrf
+        <button type="submit" 
+                class="btn btn-outline-danger btn-lg w-100 d-flex align-items-center justify-content-center">
+            <span class="material-symbols-outlined me-2">exit_to_app</span>
+            ログアウト
+        </button>
+    </form>
 </div>
-<!-- 変更後 -->
-<div class="d-flex justify-content-center gap-3 my-4">
-    <div class="d-flex justify-content-center gap-3 my-4">
-    <a href="{{ route('games.index') }}" class="btn btn-sm btn-outline-primary"><span class="material-symbols-outlined fs-6">stadia_controller</span>ゲーム一覧</a>
-    <a href="{{ route('consoles.index') }}" class="btn btn-sm btn-outline-warning"><span class="material-symbols-outlined fs-6">keyboard</span>コンソール一覧</a>
-    <a href="{{ route('performances.index') }}" class="btn btn-sm btn-outline-success"><span class="material-symbols-outlined fs-6">select_all</span>パフォーマンス一覧</a>
-    </div>
-</div>
-<div class="d-flex justify-content-center align-items-center">
-    <div class="d-flex flex-column gap-3 text-center">
-        <a href="{{ route('games.create') }}" class="btn btn-primary">
-        <span class="material-symbols-outlined fs-5">stadia_controller</span>
-        新しいゲームを作成
-        </a>
-        <a href="{{ route('consoles.create') }}" class="btn btn-warning">
-        <span class="material-symbols-outlined fs-5">keyboard</span>
-        新しいコンソールを作成
-        </a>
-        <a href="{{ route('performances.create') }}" class="btn btn-success">
-        <span class="material-symbols-outlined fs-5">select_all</span>
-        新しいパフォーマンスを作成
-        </a>
-        <form method="POST" action="{{ route('admin.logout') }}" class="d-inline">
-            @csrf
-            <button type="submit" class="btn btn-outline-danger">
-            <span class="material-symbols-outlined fs-6">exit_to_app</span>ログアウト
-            </button>
-        </form>
-    </div>    
-</div>    
+
 @endsection
