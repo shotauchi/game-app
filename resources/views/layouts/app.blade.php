@@ -26,6 +26,8 @@
   body {
     padding-top: 60px;
     padding-bottom: 60px; /* 修正: bottom の綴り */
+    background-color: #75FF75; /* 全ページ共通背景 */
+    color: #7192ff;           /* 全ページ共通文字色 */
   }
 
   /* トグル（上の「Dropdown」テキスト）を紫に */
@@ -90,26 +92,47 @@
               <!--<li class="nav-item">-->
               <!--  <a class="nav-link" href="#"><span class="material-symbols-outlined fs-6">link</span>Link</a>-->
               <!--</li>-->
-              <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                  おすすめサイト一覧
-                </a>
-                <ul class="dropdown-menu">
-                  <li><a class="dropdown-item" href="#">サイト1</a></li>
-                  <li><a class="dropdown-item" href="#">サイト2</a></li>
+              @php $rec = config('recommended_sites'); @endphp
+
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                メーカー別オススメコンソールorサイト紹介サイト一覧
+              </a>
+              <ul class="dropdown-menu">
+                @foreach($rec['consoles'] as $site)
                   <li>
-                    <hr class="dropdown-divider">
+                    <a class="dropdown-item" href="{{ $site['url'] }}" target="_blank" rel="noopener noreferrer">
+                      {{ $site['name'] }}
+                    </a>
                   </li>
-                  <li><a class="dropdown-item" href="#">サイト3</a></li>
-                </ul>
-              </li>
+                @endforeach
+            
+                <li><hr class="dropdown-divider"></li>
+            
+                @foreach($rec['sites'] as $site)
+                  <li>
+                    <a class="dropdown-item" href="{{ $site['url'] }}" target="_blank" rel="noopener noreferrer">
+                      {{ $site['name'] }}
+                    </a>
+                  </li>
+                @endforeach
+              </ul>
+            </li>
             </ul>
-            <form class="d-flex mt-3" role="search">
-              <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-              <button class="btn btn-outline-success" type="submit">Search</button>
-            </form>
+            <!--<form class="d-flex mt-3" role="search">-->
+            <!--  <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">-->
+            <!--  <button class="btn btn-outline-success" type="submit">Search</button>-->
+            <!--</form>-->
           </div>
-          
+              <li class="nav-item">
+                <a href="{{ route('home') }}"
+                   class="nav-link p-2 rounded d-flex align-items-center {{ request()->routeIs('home') ? 'bg-white text-info fw-bold' : 'text-secondary' }}"
+                   aria-current="{{ request()->routeIs('home') ? 'page' : '' }}"
+                   title="ホームへ戻る">
+                    <span class="material-symbols-outlined align-middle fs-6">home</span>
+                    <span class="align-middle ms-1">ホームへ戻る</span>
+                </a>
+        　　　　</li>
         </div>
       </div>
     </nav>
