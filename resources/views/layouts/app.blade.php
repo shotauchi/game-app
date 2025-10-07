@@ -96,7 +96,7 @@
 
             <li class="nav-item dropdown">
               <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                メーカー別オススメコンソールorサイト紹介サイト一覧
+                メーカー別オススメコンソールorサイト紹介一覧
               </a>
               <ul class="dropdown-menu">
                 @foreach($rec['consoles'] as $site)

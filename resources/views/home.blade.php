@@ -11,7 +11,7 @@
 
 <!-- サイト名 -->
 <div class="text-center my-4">
-    <h1>サイト名</h1>
+    <h1>ゲーム情報サイト</h1>
 </div>
 
 <div class="container">
@@ -174,5 +174,17 @@
     <!--    </div>-->
     <!--</div>-->
 </div>
+
+<!-- 最下部に追加 -->
+<footer class="text-center py-3 mt-4">
+    <small>
+        最終更新日：
+        @if(!empty($lastUpdated))
+            {{ \Carbon\Carbon::parse($lastUpdated)->format('Y年n月j日 H:i') }}
+        @else
+            {{ \Carbon\Carbon::now()->timezone(config('app.timezone','Asia/Tokyo'))->format('Y年n月j日') }}
+        @endif
+    </small>
+</footer>
 
 @endsection
