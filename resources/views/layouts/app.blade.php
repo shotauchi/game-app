@@ -124,6 +124,7 @@
             <!--  <button class="btn btn-outline-success" type="submit">Search</button>-->
             <!--</form>-->
           </div>
+          @if (!request()->routeIs('home'))
               <li class="nav-item">
                 <a href="{{ route('home') }}"
                    class="nav-link p-2 rounded d-flex align-items-center {{ request()->routeIs('home') ? 'bg-white text-info fw-bold' : 'text-secondary' }}"
@@ -133,6 +134,7 @@
                     <span class="align-middle ms-1">ホームへ戻る</span>
                 </a>
         　　　　</li>
+        　@endif
         </div>
       </div>
     </nav>
