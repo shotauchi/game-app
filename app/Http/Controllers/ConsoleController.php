@@ -8,6 +8,11 @@ use App\Models\Console;
 
 class ConsoleController extends Controller
 {
+        public function __construct()
+    {
+        // index と show は公開、その他は管理者のみ
+        $this->middleware('admin')->except(['index','show']);
+    }
     /**
      * Display a listing of the resource.
      *

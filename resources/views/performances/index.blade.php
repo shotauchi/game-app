@@ -20,38 +20,42 @@
     <div class="col-md-10">
       <table class="table table-bordered table-striped text-center">
         <thead>
-          <tr>
-            <th scope="col">#</th>
-            <th scope="col"><span class="material-symbols-outlined fs-6">developer_board</span>CPU</th>
-            <th scope="col"><span class="material-symbols-outlined fs-6">memory</span>GPU</th>
-            <th scope="col"><span class="material-symbols-outlined fs-6">delete</span>delete</th>
-            <th scope="col"><span class="material-symbols-outlined fs-6">contract_edit</span>edit</th>
-          </tr>
-        </thead>
-        <tbody>
-          @forelse ($performances as $performance)
-          <tr>
-            <th scope="row"><span style="color: green;">{{ $loop->iteration }}</th>
-            <td><span style="color: blue;">{{ $performance->CPU }}</span></td>
-            <td><span style="color: purple;">{{ $performance->GPU }}</span></td>
-            <td><form action="{{ route('performances.destroy', $performance->id) }}" method="POST" onsubmit="return confirm('本当に削除してよろしいですか？');">
-            @csrf
+  <tr>
+    <th scope="col">#</th>
+    <th scope="col"><span class="material-symbols-outlined fs-6">developer_board</span>CPU</th>
+    <th scope="col"><span class="material-symbols-outlined fs-6">memory</span>GPU</th>
+    @if(session()->has('is_admin') && session('is_admin'))
+      <th scope="col"><span class="material-symbols-outlined fs-6">delete</span>delete</th>
+      <th scope="col"><span class="material-symbols-outlined fs-6">contract_edit</span>edit</th>
+    @endif
+  </tr>
+</thead>
+<tbody>
+  @forelse ($performances as $performance)
+  <tr>
+    <th scope="row"><span style="color: green;">{{ $loop->iteration }}</span></th>
+    <td><span style="color: blue;">{{ $performance->CPU }}</span></td>
+    <td><span style="color: purple;">{{ $performance->GPU }}</span></td>
+
+    @if(session()->has('is_admin') && session('is_admin'))
+      <td>
+        <form action="{{ route('performances.destroy', $performance->id) }}" method="POST" onsubmit="return confirm('本当に削除してよろしいですか？');">
+          @csrf
           @method('DELETE')
           <button type="submit" class="btn btn-success">delete</button>
-        　　　　　　</form>
-        　　　</td>
-        　　<td>
-                <a href="{{ route('performances.edit', $performance->id) }}" class="btn btn-info">edit</a>
-            </td>
-          </tr>
-          @empty
-          <tr>
-            <th scope="row">-</th>
-            <td>GPUがありません。</td>
-            <td>CPUがありません。</td>
-          </tr>
-          @endforelse
-        </tbody>
+        </form>
+      </td>
+      <td>
+        <a href="{{ route('performances.edit', $performance->id) }}" class="btn btn-info">edit</a>
+      </td>
+    @endif
+
+  </tr>
+  @empty
+  <!-- 省略 -->
+  @endforelse
+</tbody>
+
       </table>
     </div>
   </div>
