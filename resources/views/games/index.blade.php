@@ -48,8 +48,16 @@
 
             <td><span style="color: orange;">{{ $game->site }}</span></td>
             <td><span style="color: purple;">{{ $game->introduction }}</span></td>
-            <td><span style="color: red;">{{ $game->URL }}</span></td>
-
+            <td>
+              @if($game->url)
+                <a href="{{ $game->url }}" target="_blank" rel="noopener noreferrer" style="color: red;">
+                  {{ $game->url }}
+                </a>
+              @else
+                <span style="color: red;">URLなし</span>
+              @endif
+            </td>
+            
             {{-- 管理者のみ操作カラムを出す --}}
             @if(session()->has('is_admin') && session('is_admin'))
               <td>

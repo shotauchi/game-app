@@ -12,7 +12,7 @@ class Game extends Model
     protected $fillable = [
         'performance_id', // 追加
         'image',
-        'URL',            // 実際のカラム名に合わせる
+        'url',
         'site',
         'introduction',
     ];

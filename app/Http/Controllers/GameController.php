@@ -55,7 +55,7 @@ class GameController extends Controller
         'performance_id' => 'required|exists:performances,id',
         'image' => 'required|image|mimes:jpeg,png,jpg,gif|max:2048',
         'site' => 'required|string|max:255',
-        'URL' => 'required|string|max:255',
+        'url' => 'required|url|max:255',
         'introduction' => 'required|string'
     ]);
 
