@@ -40,7 +40,7 @@
 
             <td>
                 @if ($game->image)
-                    <img src="{{ asset('storage/' . $game->image) }}" alt="Game Image" width="100">
+                    <img src="{{ $game->thumbnail_url }}" alt="Game Image" width="100">
                 @else
                     <span>画像なし</span>
                 @endif
