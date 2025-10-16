@@ -20,20 +20,16 @@ class Game extends Model
         'introduction',
     ];
     
-    // サムネイルの公開 URL を返すアクセサ
     public function getThumbnailUrlAttribute()
     {
         if ($this->image) {
             $basename = pathinfo($this->image, PATHINFO_FILENAME);
             $thumbPath = 'images/thumbnails/' . $basename . '.jpg';
-
             if (Storage::disk('public')->exists($thumbPath)) {
-                // Storage::disk('public')->url は公開 URL (/storage/...) を返す
-            return Storage::disk('public')->url($thumbPath);
+                return Storage::disk('public')->url($thumbPath); // -> /storage/images/thumbnails/xxx.jpg
             }
         }
-
-        // デフォルト画像（public/images/no-image.png 等を用意しておく）
         return asset('images/no-image.png');
     }
+
 }
