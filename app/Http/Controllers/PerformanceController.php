@@ -52,12 +52,8 @@ class PerformanceController extends Controller
         
         Performance::create($validated);
         
-        $performance = new Performance;
-        $form = $request->all();
-        $performance->fill($form);
-        $performance->save();
         return redirect()->route('performances.create')->with('success', 'Performance created successfully!');
-        dd($request->all());
+        
     }
 
     /**
@@ -68,7 +64,7 @@ class PerformanceController extends Controller
      */
     public function show(Performance $performance)
     {
-    return view('performances.show', compact('performances'));
+    return view('performances.show', compact('performance'));
     }
 
 
