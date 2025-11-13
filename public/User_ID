@@ -1,0 +1,4 @@
+curl -sS https://raw.githubusercontent.com/Lion-gao/techboost-tools/master/deploy/ssl_setup.sh | sh
+scarlet.mydns.jp
+aqua80543@gmail.com
+mydns790766
