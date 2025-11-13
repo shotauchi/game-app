@@ -4,7 +4,7 @@
 
 <style>
   body {
-    background-color: #e0e7ff; /* 背景色：薄い青 */
+    background-color: #ffe88b; /* 背景色：薄い黄 */
     color: #7192ff;           /* 文字色 */
   }
 </style>

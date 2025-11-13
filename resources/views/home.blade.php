@@ -61,7 +61,7 @@
                     <ul class="list-group">
                         @forelse($games1 as $game)
                             <a href="{{ route('games.show', $game) }}"
-                               class="list-group-item list-group-item-action list-group-item-info">
+                               class="list-group-item list-group-item-action list-group-item-primary">
                                 タイトル：{{ $game->site }}　
                                 ジャンル：{{ $game->introduction }}
                             </a>
@@ -101,7 +101,7 @@
         <div class="list-group">
           @forelse($consoles as $console)
             <a href="{{ route('consoles.show', $console) }}" 
-               class="list-group-item list-group-item-action list-group-item-info">
+               class="list-group-item list-group-item-action list-group-item-warning">
               {{ $console->name }}
             </a>
           @empty
@@ -139,7 +139,7 @@
       <div class="card-body">
         <div class="list-group">
           @forelse($performances as $performance)
-            <a href="{{ route('performances.show', $performance) }}" class="list-group-item list-group-item-action list-group-item-info">
+            <a href="{{ route('performances.show', $performance) }}" class="list-group-item list-group-item-action list-group-item-success">
               {{ $performance->CPU }}
             </a>
           @empty
