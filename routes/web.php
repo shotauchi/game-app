@@ -99,9 +99,9 @@ Route::middleware(['admin'])->group(function () {
    
 });
 
-
-
 Route::get('/games', [GameController::class, 'index'])->name('games.index');
+
+Route::get('/games/{game}', [GameController::class, 'show'])->name('games.show');
 
 Route::get('/consoles', [ConsoleController::class, 'index'])->name('consoles.index');
 
