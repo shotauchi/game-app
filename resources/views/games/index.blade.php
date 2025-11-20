@@ -7,7 +7,14 @@
     body {
         background-color: #e0e7ff; /* 背景色：薄い青 */
         color: #7192ff;           /* 文字色：濃いグレー */
-    }
+    .th-image { color: #0d6efd; }
+    .th-site  { color: orange; }     /* site は縦の文字と同じオレンジ */
+    .th-introduction { color: purple; }       /* introduction は紫 */
+    .th-url   { color: red; }          /* URL は赤 */
+    .th-delete, .th-edit { color: #0d6efd; }
+    
+         }
+
 </style>
 
 <div class="text-center my-4">
@@ -21,15 +28,15 @@
         <thead>
           <tr>
             <th scope="col">#</th>
-            <th scope="col"><span class="material-symbols-outlined fs-6">imagesmode</span>image</th>
-            <th scope="col"><span class="material-symbols-outlined fs-6">account_tree</span>site</th>
-            <th scope="col"><span class="material-symbols-outlined fs-6">page_footer</span>introduction</th>
-            <th scope="col"><span class="material-symbols-outlined fs-6">qr_code_scanner</span>URL</th>
+            <th scope="col" class="th-image"><span class="material-symbols-outlined fs-6">imagesmode</span>image</th>
+            <th scope="col" class="th-site"><span class="material-symbols-outlined fs-6">account_tree</span>site</th>
+            <th scope="col" class="th-introduction"><span class="material-symbols-outlined fs-6">page_footer</span>introduction</th>
+            <th scope="col" class="th-url"><span class="material-symbols-outlined fs-6">qr_code_scanner</span>URL</th>
 
             {{-- 管理者のみヘッダを表示（セッションベースで統一） --}}
             @if(session()->has('is_admin') && session('is_admin'))
-              <th scope="col"><span class="material-symbols-outlined fs-6">delete</span>削除</th>
-              <th scope="col"><span class="material-symbols-outlined fs-6">edit</span>編集</th>
+              <th scope="col" class="th-delete"><span class="material-symbols-outlined fs-6">delete</span>delete</th>
+              <th scope="col" class="th-edit"><span class="material-symbols-outlined fs-6">contract_edit</span>edit</th>
             @endif
           </tr>
         </thead>

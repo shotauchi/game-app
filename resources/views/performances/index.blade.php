@@ -4,11 +4,15 @@
 <!-- サイト名 -->
 <style>
         
-        body {
+    body {
         background-color: #b4ffb2; /* 背景色：薄い緑 */
         color: #28a745;           /* 文字色：濃いグレー */
-        
-    }
+      .th-CPU { color: blue; }       
+      .th-GPU  { color: purple; }          
+      .th-delete { color: green; } 
+      .th-edit { color: #0d6efd;
+         
+         }
     
 </style>
 
@@ -22,11 +26,11 @@
         <thead>
   <tr>
     <th scope="col">#</th>
-    <th scope="col"><span class="material-symbols-outlined fs-6">developer_board</span>CPU</th>
-    <th scope="col"><span class="material-symbols-outlined fs-6">memory</span>GPU</th>
+    <th scope="col" class="th-CPU"><span class="material-symbols-outlined fs-6">developer_board</span>CPU</th>
+    <th scope="col" class="th-GPU"><span class="material-symbols-outlined fs-6">memory</span>GPU</th>
     @if(session()->has('is_admin') && session('is_admin'))
-      <th scope="col"><span class="material-symbols-outlined fs-6">delete</span>delete</th>
-      <th scope="col"><span class="material-symbols-outlined fs-6">contract_edit</span>edit</th>
+      <th scope="col" class="th-delete"><span class="material-symbols-outlined fs-6">delete</span>delete</th>
+      <th scope="col" class="th-edit"><span class="material-symbols-outlined fs-6">contract_edit</span>edit</th>
     @endif
   </tr>
 </thead>
