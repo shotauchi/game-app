@@ -40,7 +40,7 @@
         
             <!-- 画像ファイル選択欄 -->
             <div class="mb-3">
-                <label for="image" class="form-label" style="color: #ff8c00;"><span class="material-symbols-outlined fs-6">imagesmode</span>image</label>
+                <label for="image" class="form-label" style="color: #0d6efd;"><span class="material-symbols-outlined fs-6">imagesmode</span>image</label>
                 <div class="col-3">
                     <input type="file" name="image" id="image" class="form-control @error('image') is-invalid @enderror">
                 </div>
@@ -53,7 +53,7 @@
 
         
         <div class="mb-3">
-            <label for="site" class="form-label" style="color: #006400;"><span class="material-symbols-outlined fs-6">account_tree</span>site</label> <!-- 濃い黄色 -->
+            <label for="site" class="form-label" style="color: #ff8c00;"><span class="material-symbols-outlined fs-6">account_tree</span>site</label> <!-- 濃い黄色 -->
             <div class="col-3">
                 <input type="text" name="site" id="site" class="form-control @error('site') is-invalid @enderror" value="{{ old('site') }}">
             </div>
@@ -63,7 +63,7 @@
         </div>
         
         <div class="mb-3">
-            <label for="introduction" class="form-label" style="color: #b8860b;"><span class="material-symbols-outlined fs-6">page_footer</span>introduction</label> <!-- 濃い黄色 -->
+            <label for="introduction" class="form-label" style="color: #7927F5;"><span class="material-symbols-outlined fs-6">page_footer</span>introduction</label> <!-- 濃い黄色 -->
             <div class="col-3">
                 <input type="text" name="introduction" id="introduction" class="form-control @error('introduction') is-invalid @enderror" value="{{ old('introduction') }}">
             </div>
@@ -73,7 +73,7 @@
         </div>
         
         <div class="mb-3">
-            <label for="URL" class="form-label" style="color: #800080;"><span class="material-symbols-outlined fs-6">qr_code_scanner</span>URL</label> <!-- 濃い黄色 -->
+            <label for="URL" class="form-label" style="color: #F52C2C;"><span class="material-symbols-outlined fs-6">qr_code_scanner</span>URL</label> <!-- 濃い黄色 -->
             <div class="col-3">
                 <input type="text" name="URL" id="URL" class="form-control @error('URL') is-invalid @enderror" value="{{ old('URL') }}">
             </div>

@@ -9,7 +9,7 @@
         color: #28a745;           /* 文字色：濃いグレー */
       .th-CPU { color: blue; }       
       .th-GPU  { color: purple; }          
-      .th-delete { color: green; } 
+      .th-delete { color: #F5A627; } 
       .th-edit { color: #0d6efd;
          
          }
@@ -46,7 +46,7 @@
         <form action="{{ route('performances.destroy', $performance->id) }}" method="POST" onsubmit="return confirm('本当に削除してよろしいですか？');">
           @csrf
           @method('DELETE')
-          <button type="submit" class="btn btn-success">delete</button>
+          <button type="submit" class="btn btn-warning">delete</button>
         </form>
       </td>
       <td>

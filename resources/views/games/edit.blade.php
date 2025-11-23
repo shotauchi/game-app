@@ -4,10 +4,14 @@
 
 <style>
         
-        body {
+    body {
         background-color: #e0e7ff; /* 背景色：薄い青 */
         color: #7192ff;           /* 文字色：濃いグレー */
-        
+    .label-image { color: orange; }      /* image をオレンジ */
+    .label-url   { color: red; }         /* url を赤 */
+    .label-site  { color: #0d6efd; }     /* site を #0d6efd (Bootstrap primary 相当) */
+    .label-introduction { color: purple; }      /* introduction を紫 */
+    
     }
     
 </style>
@@ -23,22 +27,22 @@
                         @method('PUT')
 
                         <div class="mb-3">
-                            <label for="image" class="form-label">画像</label>
+                            <label for="image" class="form-label label-image">画像</label>
                             <input type="text" name="image" id="image" class="form-control" value="{{ old('image', $game->image) }}" required>
                         </div>
 
                         <div class="mb-3">
-                            <label for="url" class="form-label">URL</label>
+                            <label for="url" class="form-label label-url">URL</label>
                             <input type="text" name="url" id="url" class="form-control" value="{{ old('url', $game->url) }}" required>
                         </div>
 
                         <div class="mb-3">
-                            <label for="site" class="form-label">サイト名</label>
+                            <label for="site" class="form-label label-site">サイト名</label>
                             <input type="text" name="site" id="site" class="form-control" value="{{ old('site', $game->site) }}" required>
                         </div>
 
                         <div class="mb-3">
-                            <label for="introduction" class="form-label">紹介文</label>
+                            <label for="introduction" class="form-label label-introduction">紹介文</label>
                             <textarea name="introduction" id="introduction" class="form-control" rows="5" required>{{ old('introduction', $game->introduction) }}</textarea>
                         </div>
 

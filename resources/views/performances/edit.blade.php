@@ -4,9 +4,11 @@
 
 <style>
         
-        body {
+    body {
         background-color: #b4ffb2; /* 背景色：薄い緑 */
         color: #28a745;           /* 文字色：濃いグレー */
+    .label-CPU { color: blue; }
+    .label-GPU { color: purple; }
     }
     
 </style>
@@ -23,12 +25,12 @@
                         @method('PUT') <!-- PUTメソッドに変換（更新処理） -->
                 
                         <div class="mb-3">
-                            <label for="CPU" class="form-label">CPU</label>
+                            <label for="CPU" class="form-label label-CPU">CPU</label>
                             <input type="text" name="CPU" id="CPU" class="form-control" value="{{ old('CPU', $performance->CPU) }}" required>
                         </div>
                         
                         <div class="mb-3">
-                            <label for="GPU" class="form-label">GPU</label>
+                            <label for="GPU" class="form-label label-GPU">GPU</label>
                             <input type="text" name="GPU" id="GPU" class="form-control" value="{{ old('GPU', $performance->GPU) }}" required>
                         </div>
                         

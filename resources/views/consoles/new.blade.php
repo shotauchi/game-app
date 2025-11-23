@@ -22,7 +22,7 @@
         @csrf
 
         <div class="mb-3">
-            <label for="name" class="form-label" style="color: #b8860b;"><span class="material-symbols-outlined fs-6">cable</span>Name</label>
+            <label for="name" class="form-label" style="color: #43F52C;"><span class="material-symbols-outlined fs-6">cable</span>Name</label>
             <div class="col-3">
             <input type="text" name="name" id="name" class="form-control @error('name') is-invalid @enderror" value="{{ old('name') }}">
             @error('name')
@@ -31,7 +31,7 @@
         </div>
         
         <div class="mb-3">
-            <label for="introduction" class="form-label" style="color: #800080;"><span class="material-symbols-outlined fs-6">computer</span>Introduction</label> <!-- 濃い紫 -->
+            <label for="introduction" class="form-label" style="color: #F52C2C;"><span class="material-symbols-outlined fs-6">computer</span>Introduction</label> <!-- 濃い紫 -->
             <div class="col-3">
             <textarea name="introduction" id="introduction" class="form-control @error('introduction') is-invalid @enderror">{{ old('introduction') }}</textarea>
             @error('introduction')
@@ -40,7 +40,7 @@
         </div>
 
         <div class="mb-3">
-            <label for="Manufacturer" class="form-label" style="color: #006400;"><span class="material-symbols-outlined fs-6">headset_mic</span>Manifacture</label> <!-- 濃い緑 -->
+            <label for="Manufacturer" class="form-label" style="color: #2C90F5;"><span class="material-symbols-outlined fs-6">headset_mic</span>Manifacture</label> <!-- 濃い緑 -->
             <div class="col-3">
             <input type="text" name="Manufacturer" id="Manufacturer" class="form-control @error('Manufacturer') is-invalid @enderror" value="{{ old('Manufacturer') }}">
             @error('Manufacturer')
@@ -49,7 +49,7 @@
         </div>
 
         <div class="mb-3">
-            <label for="use" class="form-label" style="color: #b8860b;"><span class="material-symbols-outlined fs-6">mouse</span>Use</label> <!-- 濃い黄色 -->
+            <label for="use" class="form-label" style="color: #7927F5;"><span class="material-symbols-outlined fs-6">mouse</span>Use</label> <!-- 濃い黄色 -->
             <div class="col-3">
             <input type="text" name="use" id="use" class="form-control @error('use') is-invalid @enderror" value="{{ old('use') }}">
             @error('use')
@@ -57,7 +57,7 @@
             @enderror
         </div>
 
-        <button type="submit" class="btn btn-primary rounded-pill">Submit</button>
+        <button type="submit" class="btn btn-primary">Submit</button>
     </form>
 </div>
 <!-- ① 新規作成フォームの後に追加 -->
