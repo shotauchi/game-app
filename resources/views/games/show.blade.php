@@ -4,19 +4,29 @@
 
 <style>
         
-        body {
+     body {
         background-color: #e0e7ff; /* 背景色：薄い青 */
         color: #7192ff;           /* 文字色：濃いグレー */
         
-    }
-    
+          }
+            /* 全ゲームタイトルをオレンジに */
+             .site-title {
+              color: orange;
+              font-weight: 700;  
+          }  
+             .introduction-text {
+              color: #28a745; /* 緑 */
+              font-weight: bold;
+          
+          }
+  
 </style>
 <div class="container my-4">
   <div class="row">
     <div class="col-10 offset-1">
       <div class="card">
         <div class="card-header">
-          <h5 class="m-0">{{ $game->site }}</h5>
+          <h5 class="m-0 site-title">{{ $game->site }}</h5>
         </div>
         <div class="card-body">
           @if($game->image)
@@ -24,7 +34,7 @@
           @endif
 
           @if($game->introduction)
-            <p class="mb-3">{{ $game->introduction }}</p>
+            <p class="mb-3 introduction-text">{{ $game->introduction }}</p>
           @endif
 
           @if($game->url)

@@ -6,7 +6,8 @@
   body {
     background-color: #ffe88b; /* 背景色：薄い黄 */
     color: #7192ff;           /* 文字色 */
-  }
+       }
+  
 </style>
 
 <div class="container my-4">
