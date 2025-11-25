@@ -15,7 +15,7 @@
               font-weight: 700;  
           }  
              .introduction-text {
-              color: #28a745; /* 緑 */
+              color: #6C27F5; /* 紫色 */
               font-weight: bold;
           
           }
