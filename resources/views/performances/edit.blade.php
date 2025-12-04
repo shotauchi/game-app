@@ -15,7 +15,7 @@
 <div class="container my-5">
     <div class="row justify-content-center">
         <div class="col-md-6"> <!-- 幅を短めに（12分割のうち6列分） -->
-            <h1 class="text-center mb-4">編集画面一覧です。</h1>
+            <h1 class="text-center mb-4">編集画面</h1>
 
             <div class="card">
                 <div class="card-body">

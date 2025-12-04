@@ -62,32 +62,32 @@
     <a href="{{ route('games.index') }}" 
        class="btn btn-primary btn-lg w-100 d-flex align-items-center justify-content-center">
         <span class="material-symbols-outlined me-2">stadia_controller</span>
-        ゲームの一覧
+        ゲーム一覧
     </a>
     <a href="{{ route('consoles.index') }}" 
        class="btn btn-warning btn-lg w-100 d-flex align-items-center justify-content-center">
         <span class="material-symbols-outlined me-2">keyboard</span>
-        コンソールの一覧
+        コンソール一覧
     </a>
     <a href="{{ route('performances.index') }}" 
        class="btn btn-success btn-lg w-100 d-flex align-items-center justify-content-center">
         <span class="material-symbols-outlined me-2">select_all</span>
-        パフォーマンスの一覧
+        パフォーマンス一覧
     </a>
     <a href="{{ route('games.create') }}" 
        class="btn btn-primary btn-lg w-100 d-flex align-items-center justify-content-center">
         <span class="material-symbols-outlined me-2">add_circle</span>
-        ゲームの新規作成
+        ゲーム新規作成
     </a>
     <a href="{{ route('consoles.create') }}" 
        class="btn btn-warning btn-lg w-100 d-flex align-items-center justify-content-center">
         <span class="material-symbols-outlined me-2">add_circle</span>
-        コンソールの新規作成
+        コンソール新規作成
     </a>
     <a href="{{ route('performances.create') }}" 
        class="btn btn-success btn-lg w-100 d-flex align-items-center justify-content-center">
         <span class="material-symbols-outlined me-2">add_circle</span>
-        パフォーマンスの新規作成
+        パフォーマンス新規作成
     </a>
 
     <!-- ログアウトボタンも同じ枠に配置 -->

@@ -12,7 +12,7 @@
 </style>
 
 <div class="container card py-5 shadow-lg px-3 mt-5">
-    <h2 style="color: #ff8c00;">コンソールの新規作成</h2> <!-- 濃いオレンジ -->
+    <h2 style="color: #ff8c00;">コンソール新規作成</h2> <!-- 濃いオレンジ -->
 
     @if(session('success'))
         <div class="alert alert-success">{{ session('success') }}</div>

@@ -12,7 +12,7 @@
 </style>
 
 <div class="container card py-5 px-3 mt-5">
- <h2 style="color: #0000FF;">ゲームの新規作成</h2>
+ <h2 style="color: #0000FF;">ゲーム新規作成</h2>
 
 @if(session('success'))
         <div class="alert alert-success">{{ session('success') }}</div>
