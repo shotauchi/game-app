@@ -32,7 +32,7 @@
                         </div>
 
                         <div class="mb-3">
-                            <label for="url" class="form-label label-url">URL</label>
+                            <label for="url" class="form-label label-url">url</label>
                             <input type="text" name="url" id="url" class="form-control" value="{{ old('url', $game->url) }}" required>
                         </div>
 

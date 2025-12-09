@@ -73,11 +73,11 @@
         </div>
         
         <div class="mb-3">
-            <label for="URL" class="form-label" style="color: #F52C2C;"><span class="material-symbols-outlined fs-6">qr_code_scanner</span>URL</label> <!-- 濃い黄色 -->
+            <label for="url" class="form-label" style="color: #F52C2C;"><span class="material-symbols-outlined fs-6">qr_code_scanner</span>url</label> <!-- 濃い黄色 -->
             <div class="col-3">
-                <input type="text" name="URL" id="URL" class="form-control @error('URL') is-invalid @enderror" value="{{ old('URL') }}">
+                <input type="text" name="url" id="url" class="form-control @error('url') is-invalid @enderror" value="{{ old('url') }}">
             </div>
-            @error('URL')
+            @error('url')
                 <div class="invalid-feedback">{{ $message }}</div>
             @enderror
         </div>

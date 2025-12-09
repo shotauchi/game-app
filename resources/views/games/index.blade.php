@@ -31,7 +31,7 @@
             <th scope="col" class="th-image"><span class="material-symbols-outlined fs-6">imagesmode</span>image</th>
             <th scope="col" class="th-site"><span class="material-symbols-outlined fs-6">account_tree</span>site</th>
             <th scope="col" class="th-introduction"><span class="material-symbols-outlined fs-6">page_footer</span>introduction</th>
-            <th scope="col" class="th-url"><span class="material-symbols-outlined fs-6">qr_code_scanner</span>URL</th>
+            <th scope="col" class="th-url"><span class="material-symbols-outlined fs-6">qr_code_scanner</span>url</th>
 
             {{-- 管理者のみヘッダを表示（セッションベースで統一） --}}
             @if(session()->has('is_admin') && session('is_admin'))
@@ -61,7 +61,7 @@
                   {{ $game->url }}
                 </a>
               @else
-                <span style="color: red;">URLなし</span>
+                <span style="color: red;">urlなし</span>
               @endif
             </td>
             

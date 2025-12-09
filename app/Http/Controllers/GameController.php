@@ -12,7 +12,7 @@ use Illuminate\Support\Facades\Storage;
 
 use Illuminate\Support\Str;
 
-use Intervention\Image\Facades\Image;
+use Intervention\Image\ImageManagerStatic as Image;
 
 class GameController extends Controller
 {
