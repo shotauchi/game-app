@@ -30,7 +30,7 @@
         </div>
         <div class="card-body">
           @if($game->image)
-            <img src="{{ asset('storage/' . $game->image) }}" class="img-fluid mb-3" alt="{{ $game->site }}">
+            <img src="{{ asset('storage/' . $game->image) }}" alt="Game Image" class="game-image" loading="lazy">
           @endif
 
           @if($game->introduction)

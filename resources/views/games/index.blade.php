@@ -14,6 +14,23 @@
     .th-delete, .th-edit { color: #0d6efd; }
     
          }
+         
+    /* テーブル内の画像を小さく見やすくする */
+    .game-image {
+      max-width: 100px;   /* 横幅を最大100pxに制限 */
+      height: auto;       /* アスペクト比を維持 */
+      display: inline-block;
+      object-fit: cover;  /* 枠に合わせて切り落とし（必要なら） */
+      border-radius: 6px; /* 好みで角丸 */
+    }
+    
+    /* もし正方形サムネイル風に揃えたい場合 */
+    .game-image.square {
+      width: 100px;
+      height: 100px;
+      object-fit: cover;
+    }
+
 
 </style>
 
@@ -47,7 +64,7 @@
 
             <td>
                 @if ($game->image)
-                    <img src="{{ $game->thumbnail_url }}" alt="Game Image" width="100">
+                    <img src="{{ asset('storage/' . $game->image) }}" alt="Game Image" class="game-image" loading="lazy">
                 @else
                     <span>画像なし</span>
                 @endif

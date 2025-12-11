@@ -10,10 +10,6 @@ use App\Models\Performance;
 
 use Illuminate\Support\Facades\Storage;
 
-use Illuminate\Support\Str;
-
-use Intervention\Image\ImageManagerStatic as Image;
-
 class GameController extends Controller
 {
         public function __construct()
@@ -67,27 +63,9 @@ class GameController extends Controller
 
         if ($request->hasFile('image')) {
             $file = $request->file('image');
+            $path = $request->file('image')->store('images', 'public');
+            //app/public/storage/images に保存 $form['image'] = $path; // DBには images/ファイル名 が入る
 
-            // 安全なファイル名を作成
-            $originalName = pathinfo($file->getClientOriginalName(), PATHINFO_FILENAME);
-            $safeName = Str::slug($originalName) . '-' . time();
-            $ext = $file->getClientOriginalExtension();
-
-            // ① 原寸を public ディスクの images に保存
-            $originalFilename = $safeName . '.' . $ext;
-            $path = $file->storeAs('images', $originalFilename, 'public'); // 返り値: images/xxx.png
-            $form['image'] = $path;
-
-            // ② サムネイルを作成して public/images/thumbnails に保存（例: 200x200）
-            $thumbnailImage = Image::make($file->getRealPath())
-                ->fit(200, 200)       // 必要に応じて resize(...) に変更
-                ->encode('jpg', 80);  // jpeg に変換（品質80）
-
-            $thumbnailFilename = $safeName . '.jpg';
-            $thumbnailPath = 'images/thumbnails/' . $thumbnailFilename;
-
-            Storage::disk('public')->put($thumbnailPath, (string) $thumbnailImage);
-            // （DB に thumbnail カラムを追加する設計でなければ、モデルアクセサで生成参照します）
         }
 
         $game = new Game();
@@ -104,7 +82,9 @@ class GameController extends Controller
 
     public function edit($id)
     {
+        // ① 該当ゲームデータを取得
         $game = Game::findOrFail($id);
+        // ② 編集用のビューにデータを渡して表示
         return view('games.edit', compact('game'));
     }
 
@@ -114,44 +94,12 @@ class GameController extends Controller
 
         // 画像更新を許可する場合は image を file として受け取れるように修正
         $validated = $request->validate([
-            'image' => 'nullable|image|mimes:jpeg,png,jpg,gif|max:2048',
+            'image' => 'required|string|max:255',
             'url' => 'required|string|max:255',
             'site' => 'required|string|max:255',
             'introduction' => 'required|string',
-            'performance_id' => 'required|exists:performances,id',
+            // 'performance_id' => 'required|exists:performances,id',
         ]);
-
-        // 画像がアップされたら古い原寸・サムネイルを削除して新しいものを保存
-        if ($request->hasFile('image')) {
-            // 古いファイル削除（あれば）
-            if ($game->image && Storage::disk('public')->exists($game->image)) {
-                Storage::disk('public')->delete($game->image);
-            }
-            // 古いサムネイル
-            $oldBasename = pathinfo($game->image ?? '', PATHINFO_FILENAME);
-            if ($oldBasename) {
-                $oldThumb = 'images/thumbnails/' . $oldBasename . '.jpg';
-                if (Storage::disk('public')->exists($oldThumb)) {
-                    Storage::disk('public')->delete($oldThumb);
-                }
-            }
-
-            // 新しい原寸とサムネイルを保存（store と同じ処理）
-            $file = $request->file('image');
-            $originalName = pathinfo($file->getClientOriginalName(), PATHINFO_FILENAME);
-            $safeName = Str::slug($originalName) . '-' . time();
-            $ext = $file->getClientOriginalExtension();
-            $originalFilename = $safeName . '.' . $ext;
-            $path = $file->storeAs('images', $originalFilename, 'public');
-            $validated['image'] = $path;
-
-            $thumbnailImage = Image::make($file->getRealPath())
-                ->fit(200, 200)
-                ->encode('jpg', 80);
-            $thumbnailFilename = $safeName . '.jpg';
-            $thumbnailPath = 'images/thumbnails/' . $thumbnailFilename;
-            Storage::disk('public')->put($thumbnailPath, (string) $thumbnailImage);
-        }
 
         $game->update($validated);
 
@@ -160,23 +108,14 @@ class GameController extends Controller
 
     public function destroy($id)
     {
-        $game = Game::findOrFail($id);
+        $game = Game::findOrFail($id);// IDに該当するゲーム情報を取得
 
         // 原寸削除
         if ($game->image && Storage::disk('public')->exists($game->image)) {
             Storage::disk('public')->delete($game->image);
         }
 
-        // サムネイル削除（同名の basename を使って jpg として保存している前提）
-        if ($game->image) {
-            $basename = pathinfo($game->image, PATHINFO_FILENAME);
-            $thumbPath = 'images/thumbnails/' . $basename . '.jpg';
-            if (Storage::disk('public')->exists($thumbPath)) {
-                Storage::disk('public')->delete($thumbPath);
-            }
-        }
-
-        $game->delete();
+        $game->delete();// データベースから削除
 
         return redirect()->route('games.index')->with('success', 'ゲームを削除しました');
     }
