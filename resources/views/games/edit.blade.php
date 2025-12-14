@@ -27,7 +27,7 @@
                         @method('PUT')
 
                         <div class="mb-3">
-                            <label for="image" class="form-label label-image">画像</label>
+                            <label for="image" class="form-label label-image">image</label>
                             <input type="text" name="image" id="image" class="form-control" value="{{ old('image', $game->image) }}" required>
                         </div>
 
@@ -37,12 +37,12 @@
                         </div>
 
                         <div class="mb-3">
-                            <label for="site" class="form-label label-site">サイト名</label>
+                            <label for="site" class="form-label label-site">site</label>
                             <input type="text" name="site" id="site" class="form-control" value="{{ old('site', $game->site) }}" required>
                         </div>
 
                         <div class="mb-3">
-                            <label for="introduction" class="form-label label-introduction">紹介文</label>
+                            <label for="introduction" class="form-label label-introduction">introduction</label>
                             <textarea name="introduction" id="introduction" class="form-control" rows="5" required>{{ old('introduction', $game->introduction) }}</textarea>
                         </div>
 
