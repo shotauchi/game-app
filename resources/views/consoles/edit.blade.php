@@ -7,9 +7,9 @@
     body {
         background-color: #ffe88b;
         color: #ff9b00;
-    .label-name { color: green; }
     .label-introduction { color: red; }
     .label-Manufacturer  { color: blue; }
+    .label-name { color: green; }
     .label-use   { color: purple; }
     }
     
@@ -25,26 +25,27 @@
                     <form action="{{ route('consoles.update', $console->id) }}" method="POST">
                         @csrf
                         @method('PUT') <!-- PUTメソッドに変換（更新処理） -->
-                
-                        <div class="mb-3">
-                            <label for="name" class="form-label label-name">コンソール名</label>
-                            <input type="text" name="name" id="name" class="form-control"
-                                   value="{{ old('name', $console->name) }}" required>
-                        </div>
-
-                        <div class="mb-3">
-                            <label for="introduction" class="form-label label-introduction">紹介文</label>
-                            <textarea name="introduction" id="introduction" class="form-control" rows="5" required>{{ old('introduction', $console->introduction) }}</textarea>
-                        </div>
                         
                         <div class="mb-3">
-                        <label for="Manufacturer" class="form-label label-Manufacturer">メーカー名</label>
+                            <label for="introduction" class="form-label label-introduction">introduction</label>
+                            <textarea name="introduction" id="introduction" class="form-control" rows="5" required>{{ old('introduction', $console->introduction) }}</textarea>
+                        </div>
+                
+                        <div class="mb-3">
+                        <label for="Manufacturer" class="form-label label-Manufacturer">Manufacturer</label>
                         <input type="text" name="Manufacturer" id="Manufacturer" class="form-control"
                            value="{{ old('Manufacturer', $console->Manufacturer) }}" required>
                         </div>
                         
                         <div class="mb-3">
-                            <label for="use" class="form-label label-use">使用用途</label>
+                            <label for="name" class="form-label label-name">name</label>
+                            <input type="text" name="name" id="name" class="form-control"
+                                   value="{{ old('name', $console->name) }}" required>
+                        </div>
+
+                        
+                        <div class="mb-3">
+                            <label for="use" class="form-label label-use">use</label>
                             <input type="text" name="use" id="use" class="form-control"
                                    value="{{ old('use', $console->use) }}" required>
                         </div>

@@ -7,10 +7,10 @@
     body {
         background-color: #e0e7ff; /* 背景色：薄い青 */
         color: #7192ff;           /* 文字色：濃いグレー */
-    .label-image { color: orange; }      /* image をオレンジ */
-    .label-url   { color: red; }         /* url を赤 */
-    .label-site  { color: #0d6efd; }     /* site を #0d6efd (Bootstrap primary 相当) */
+    .label-image { color: #0d6efd; }      /* image を #0d6efd (Bootstrap primary 相当) */
+    .label-site  { color: orange; }     /* site を オレンジ*/
     .label-introduction { color: purple; }      /* introduction を紫 */
+    .label-url   { color: red; }         /* url を赤 */
     
     }
     
@@ -32,11 +32,6 @@
                         </div>
 
                         <div class="mb-3">
-                            <label for="url" class="form-label label-url">url</label>
-                            <input type="text" name="url" id="url" class="form-control" value="{{ old('url', $game->url) }}" required>
-                        </div>
-
-                        <div class="mb-3">
                             <label for="site" class="form-label label-site">site</label>
                             <input type="text" name="site" id="site" class="form-control" value="{{ old('site', $game->site) }}" required>
                         </div>
@@ -46,6 +41,11 @@
                             <textarea name="introduction" id="introduction" class="form-control" rows="5" required>{{ old('introduction', $game->introduction) }}</textarea>
                         </div>
 
+                        <div class="mb-3">
+                            <label for="url" class="form-label label-url">url</label>
+                            <input type="text" name="url" id="url" class="form-control" value="{{ old('url', $game->url) }}" required>
+                        </div>
+                        
                         <button type="submit" class="btn btn-primary w-100">更新する</button>
                     </form>
                 </div>

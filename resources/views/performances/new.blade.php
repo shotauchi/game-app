@@ -57,7 +57,7 @@
             @enderror
         </div>
 
-        <button type="submit" class="btn btn-primary">Submit</button>
+        <button type="submit" class="btn btn-primary">登録する</button>
     </form>
  </div>
     <!-- ① 新規作成フォームの後に追加 -->
