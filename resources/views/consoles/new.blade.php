@@ -11,7 +11,8 @@
     
 </style>
 
-<div class="container card py-5 shadow-lg px-3 mt-5">
+<div class="container mt-5">
+  <div class="card py-5 shadow-lg px-3">
     <h2 style="color: #ff8c00;">コンソール新規作成</h2> <!-- 濃いオレンジ -->
 
     @if(session('success'))
@@ -49,7 +50,7 @@
             @enderror
         </div>
 
-        <div class="mb-3">
+        <div class="mb-5 mt-4">
             <label for="use" class="form-label" style="color: #7927F5;"><span class="material-symbols-outlined fs-6">mouse</span>use</label> <!-- 濃い黄色 -->
             <div class="col-3">
             <input type="text" name="use" id="use" class="form-control @error('use') is-invalid @enderror" value="{{ old('use') }}">
@@ -58,15 +59,15 @@
             @enderror
         </div>
 
-        <button type="submit" class="btn btn-primary">登録する</button>
+        <button type="submit" class="btn btn-primary mt-4">登録する</button>
     </form>
-</div>
+  </div> {{-- card --}}
+</div>{{-- container --}}
 <!-- ① 新規作成フォームの後に追加 -->
-<div class="text-end mt-3 me-3">
+<div class="text-end mt-4 me-3">
     <a href="{{ route('consoles.index') }}" class="btn btn-outline-warning">
         <span class="material-symbols-outlined fs-6">keyboard</span>コンソール一覧画面へ
     </a>
 </div>
-        
         
 @endsection

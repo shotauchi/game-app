@@ -46,7 +46,7 @@
                             <input type="text" name="url" id="url" class="form-control" value="{{ old('url', $game->url) }}" required>
                         </div>
                         
-                        <button type="submit" class="btn btn-primary w-100">更新する</button>
+                        <button type="submit" class="btn btn-primary">更新する</button>
                     </form>
                 </div>
             </div>
