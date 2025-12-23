@@ -33,7 +33,7 @@
         </div>
         
         <div class="mb-3">
-            <label for="Manufacturer" class="form-label" style="color: #2C90F5;"><span class="material-symbols-outlined fs-6">headset_mic</span>Manifacture</label> <!-- 濃い緑 -->
+            <label for="Manufacturer" class="form-label" style="color: #2C90F5;"><span class="material-symbols-outlined fs-6">headset_mic</span>Manufacturer</label> <!-- 濃い緑 -->
             <div class="col-3">
             <input type="text" name="Manufacturer" id="Manufacturer" class="form-control @error('Manufacturer') is-invalid @enderror" value="{{ old('Manufacturer') }}">
             @error('Manufacturer')
